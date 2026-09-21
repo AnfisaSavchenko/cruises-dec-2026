@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="37 круизов по Австралии и Новой Зеландии с отправлением в декабре 2026: маршруты, даты, цены на двоих и ссылки на официальные сайты.">
+<meta name="robots" content="noindex">
+<title>Круизы Австралия – Новая Зеландия 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Golos+Text:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ground:#EEF4F3; --surface:#FFFFFF; --ink:#10262B; --muted:#55696D; --line:#D3E0DE;
+  --sea:#0E4A5A; --accent:#1F6F5C; --accent-ink:#FFFFFF; --accent-soft:#DDEFE9;
+  --hero-bg:#0E4A5A; --hero-ink:#F1F8F7; --hero-muted:#A9CDD3; --hero-line:#2C6A79;
+  --sun:#8A5A0B; --sun-soft:#FBEFD2;
+  --map-sea:#DDECEF; --map-land:#FAFBF5; --map-coast:#9DBBBE;
+  --ok:#1F6F5C; --ok-soft:#DDEFE9; --warn:#8A5A0B; --warn-soft:#FBEFD2; --bad:#8C3B47; --bad-soft:#F6E1E4;
+  --display:"Forum","Georgia","Times New Roman",serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B1719; --surface:#12252A; --ink:#E4EFED; --muted:#93A9AC; --line:#23393E;
+    --sea:#8FD3E0; --accent:#57BFA0; --accent-ink:#06211B; --accent-soft:#173A33;
+    --hero-bg:#0F2F38; --hero-ink:#EAF5F4; --hero-muted:#8FB5BC; --hero-line:#24505B;
+    --sun:#F0C060; --sun-soft:#3A2E12; --map-sea:#0D2228; --map-land:#1E3B3E; --map-coast:#3A6166;
+    --ok:#6FD0B2; --ok-soft:#173A33; --warn:#F0C060; --warn-soft:#3A2E12; --bad:#F0A0AC; --bad-soft:#3D1E24;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1719; --surface:#12252A; --ink:#E4EFED; --muted:#93A9AC; --line:#23393E;
+  --sea:#8FD3E0; --accent:#57BFA0; --accent-ink:#06211B; --accent-soft:#173A33;
+  --hero-bg:#0F2F38; --hero-ink:#EAF5F4; --hero-muted:#8FB5BC; --hero-line:#24505B;
+  --sun:#F0C060; --sun-soft:#3A2E12; --map-sea:#0D2228; --map-land:#1E3B3E; --map-coast:#3A6166;
+  --ok:#6FD0B2; --ok-soft:#173A33; --warn:#F0C060; --warn-soft:#3A2E12; --bad:#F0A0AC; --bad-soft:#3D1E24;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink)}
+.hero .wrap{padding-block:36px 28px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--hero-muted);font-weight:500}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,56px);line-height:1.05;margin:0;text-wrap:balance}
+.lede{max-width:62ch;color:var(--hero-ink);margin:0;font-size:17px}
+.coords{display:flex;flex-wrap:wrap;gap:6px 22px;border-top:1px solid var(--hero-line);padding-top:14px;margin-top:6px;font-size:13px;color:var(--hero-muted);font-variant-numeric:tabular-nums}
+.coords b{color:var(--hero-ink);font-weight:500}
+
+/* picks */
+.section{padding-block:28px 0}
+h2{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.15;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 16px;max-width:65ch;font-size:15px}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pick{background:var(--accent-soft);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px;text-decoration:none}
+.pick:hover .pick-go{text-decoration:underline}
+.pick-price{font-family:var(--display);font-size:30px;line-height:1;color:var(--accent)}
+.pick-name{font-weight:600}
+.pick-meta{font-size:14px;color:var(--muted)}
+.pick-go{font-size:14px;font-weight:600;color:var(--accent);margin-top:auto;padding-top:6px}
+
+/* controls */
+.controls{display:flex;flex-direction:column;gap:12px;padding-block:24px 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:15px;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--sea);border-color:var(--sea);color:var(--ground)}
+.chip .n{opacity:.65;font-variant-numeric:tabular-nums;margin-left:4px}
+.toggles{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:15px}
+.toggles label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.toggles input{width:18px;height:18px;accent-color:var(--accent)}
+.toggles select{font:inherit;font-size:15px;padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.count{color:var(--muted);font-size:14px;margin-left:auto}
+
+/* list */
+.list{display:flex;flex-direction:column;gap:10px;padding-block:8px 8px}
+.cruise{background:var(--surface);border:1px solid var(--line);border-radius:6px;display:grid;grid-template-columns:128px minmax(0,1fr) 320px 214px;grid-template-areas:"when main map pay";gap:0}
+.cruise.no-map{grid-template-areas:"when main main pay"}
+.cruise>div{padding:18px}
+.when{grid-area:when}.main{grid-area:main}.mapbox{grid-area:map}.pay{grid-area:pay}
+.cruise>.mapbox{padding:12px 4px 12px 0;display:flex;align-items:center}
+.mapbox svg{display:block;width:100%;height:auto;border-radius:4px;background:var(--map-sea)}
+.m-land{fill:var(--map-land);stroke:var(--map-coast);stroke-width:.8;stroke-linejoin:round}
+.m-grid{stroke:var(--map-coast);stroke-width:.4;opacity:.45}
+.m-route{fill:none;stroke:var(--accent);stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.m-dot{fill:var(--surface);stroke:var(--sea);stroke-width:1.6}
+.m-dot.scenic{fill:var(--accent-soft);stroke:var(--accent)}
+.m-dot.start{fill:var(--accent);stroke:var(--surface)}
+.m-dot.end{fill:var(--ink);stroke:var(--surface)}
+.m-label{font-family:var(--body);font-size:9.5px;font-weight:500;fill:var(--ink);stroke:var(--map-sea);stroke-width:2.6;paint-order:stroke;stroke-linejoin:round}
+.when{border-right:1px dashed var(--line);display:flex;flex-direction:column;gap:4px}
+.when .d{font-family:var(--display);font-size:24px;line-height:1.1}
+.when .to{font-size:14px;color:var(--muted)}
+.when .n{font-size:14px;font-weight:600;color:var(--sea);margin-top:4px}
+.main{display:flex;flex-direction:column;gap:8px;min-width:0}
+.line{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.name{font-size:19px;font-weight:600;line-height:1.25;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--sun-soft);color:var(--sun)}
+.route{display:flex;flex-wrap:wrap;gap:2px 0;font-size:15px;color:var(--ink);margin:0;padding:0;list-style:none}
+.route li:not(:last-child)::after{content:"→";color:var(--muted);margin:0 7px}
+.route li.scenic{color:var(--accent);font-style:italic}
+.route li.scenic::before{content:"≈ ";font-style:normal}
+.pay{border-left:1px dashed var(--line);display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.price{font-family:var(--display);font-size:30px;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price small{font-family:var(--body);font-size:13px;color:var(--muted);display:block;margin-top:4px;white-space:normal}
+.pnote{font-size:13.5px;color:var(--muted)}
+.pill{font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:999px}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.few,.pill.wait{background:var(--warn-soft);color:var(--warn)}
+.pill.sold{background:var(--bad-soft);color:var(--bad)}
+.btn{margin-top:auto;display:inline-block;white-space:nowrap;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:9px 14px;border-radius:6px}
+.btn:hover{filter:brightness(1.08)}
+.cruise.is-sold .price,.cruise.is-sold .name,.cruise.is-sold .when .d{color:var(--muted)}
+.cruise.is-sold .btn{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:6px}
+
+/* notes */
+.notes{padding-block:28px 48px}
+.notes dl{display:grid;grid-template-columns:200px 1fr;gap:10px 24px;margin:0;font-size:15px}
+.notes dt{font-weight:600}
+.notes dd{margin:0;color:var(--muted);max-width:65ch}
+.legend{font-size:14px;color:var(--muted);margin:0 0 4px}
+.legend i{color:var(--accent)}
+
+@media (max-width:1060px){
+  .cruise,.cruise.no-map{grid-template-columns:128px minmax(0,1fr) 214px;grid-template-areas:"when main pay" "when map pay"}
+  .cruise>.mapbox{padding:0 18px 18px;max-width:420px}
+}
+@media (max-width:760px){
+  .picks{grid-template-columns:1fr}
+  .cruise,.cruise.no-map{grid-template-columns:minmax(0,1fr);grid-template-areas:"when" "main" "map" "pay"}
+  .cruise>.mapbox{padding:0 16px 14px;max-width:none}
+  .cruise>div{padding:14px 16px}
+  .when{border-right:0;border-bottom:1px dashed var(--line);flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+  .when .n{margin:0 0 0 auto}
+  .pay{border-left:0;border-top:1px dashed var(--line)}
+  .btn{margin-top:6px}
+  .count{margin-left:0;width:100%}
+  .notes dl{grid-template-columns:1fr;gap:2px 0}
+  .notes dd{margin-bottom:12px}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.chip{transition:filter .15s,background .15s}}
+</style>
+
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Отправление в декабре 2026 · лето в Южном полушарии</div>
+    <h1>Круизы по Австралии и Новой Зеландии</h1>
+    <p class="lede">37 рейсов тринадцати круизных компаний, у каждого — схема маршрута. Цена везде — за двоих в одной каюте, самой дешёвой из тех, что ещё продаются. Все данные и ссылки — только с официальных сайтов компаний, по состоянию на 21 сентября 2026.</p>
+    <div class="coords" aria-hidden="true">
+      <span><b>Сидней</b> 33°52′ ю. ш.</span>
+      <span><b>Окленд</b> 36°51′ ю. ш.</span>
+      <span><b>Хобарт</b> 42°53′ ю. ш.</span>
+      <span><b>Милфорд-Саунд</b> 44°40′ ю. ш.</span>
+      <span><b>Данидин</b> 45°52′ ю. ш.</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section" aria-labelledby="picks-h">
+    <h2 id="picks-h">Самые выгодные с заходом в Новую Зеландию</h2>
+    <p class="sub">Три самых дешёвых варианта, где ещё есть каюты всех классов.</p>
+    <div class="picks" id="picks"></div>
+  </section>
+
+  <section aria-labelledby="all-h">
+    <div class="controls">
+      <h2 id="all-h">Все круизы</h2>
+      <div class="chips" id="chips" role="group" aria-label="Тип круиза"></div>
+      <div class="toggles">
+        <label for="only-free"><input type="checkbox" id="only-free"> Только где есть места</label>
+        <label for="only-holiday"><input type="checkbox" id="only-holiday"> Рождество или Новый год на борту</label>
+        <label for="sort">Порядок:
+          <select id="sort">
+            <option value="pick">как в подборке (от дешёвых)</option>
+            <option value="date">по дате отправления</option>
+            <option value="short">сначала короткие</option>
+          </select>
+        </label>
+        <span class="count" id="count" aria-live="polite"></span>
+      </div>
+      <p class="legend"><i>≈ курсивом</i> — «живописный проход»: лайнер идёт по фьордам без высадки на берег. На схемах зелёная точка — начало, тёмная — конец маршрута; линии условные и показывают порядок портов, а не точный путь судна.</p>
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section class="notes" aria-labelledby="notes-h">
+    <h2 id="notes-h">Что важно знать</h2>
+    <p class="sub">Прежде чем бронировать.</p>
+    <dl>
+      <dt>Валюты разные</dt>
+      <dd>A$ — австралийские доллары, US$ — доллары США, € — евро. Сайты показывают валюту по стране посетителя, поэтому у вас на экране может оказаться другая. Пересчёта между валютами здесь нет.</dd>
+      <dt>Налоги и сборы</dt>
+      <dd>Уже включены в цену у Royal Caribbean, Celebrity, Princess, Holland America, Azamara и Silversea. У NCL, Oceania, Viking и Regent сайт этого не уточняет — итог при бронировании может быть выше.</dd>
+      <dt>Цены меняются</dt>
+      <dd>Это снимок на 21 сентября 2026. На многих рейсах остались единицы кают, а скидки Azamara и Viking действуют до 30 сентября, Oceania — до 3 ноября. Перед покупкой проверьте цену по ссылке.</dd>
+      <dt>Цена Celebrity</dt>
+      <dd>На новогоднем рейсе Celebrity Edge остались только сьюты, и сайт отдаёт A$92 087 на двоих. Цифра выглядит завышенной — её стоит перепроверить на странице круиза.</dd>
+      <dt>Кто не ходит в декабре</dt>
+      <dd>Cunard и Seabourn приходят в регион только в феврале 2027. У Crystal и Scenic рейсов нет, лайнер Disney переведён в Сан-Диего. Carnival Australia в декабре ходит только на Вануату и в Новую Каледонию.</dd>
+      <dt>Лист ожидания</dt>
+      <dd>У Regent на всех трёх рейсах открыта только запись в лист ожидания: каюту дадут, если кто-то откажется.</dd>
+    </dl>
+  </section>
+</main>
+
+<script>
+const CATS = [
+  {id:"all", label:"Все"},
+  {id:"nz",  label:"Австралия + Новая Зеландия"},
+  {id:"au",  label:"Только Австралия"},
+  {id:"lux", label:"Люкс"},
+  {id:"exp", label:"Экспедиции"}
+];
+const X="Рождество на борту", N="Новый год на борту";
+const STATUS = {ok:"Есть места", few:"Мало мест", wait:"Лист ожидания", sold:"Распродано"};
+
+const CRUISES = [
+/* ---- Австралия + НЗ ---- */
+{id:"ncl23",cat:"nz",line:"Norwegian Cruise Line",name:"Norwegian Spirit: Сидней – Новая Зеландия – Сидней",n:14,nl:"14 ночей",d:"2026-12-23",from:"23 дек",to:"6 янв",tags:[X,N],
+ route:["Сидней","Иден","Мельбурн (ночёвка)","~Даски, Даутфул и Милфорд-Саунд","Данидин","Тимару","Тауранга","Бей-оф-Айлендс","Сидней"],
+ price:"€3 022",cabin:"внутренняя каюта",note:"С окном €4 090, с балконом €6 124",status:"ok",
+ url:"https://www.ncl.com/cruises/14-day-australia-and-new-zealand-round-trip-sydney-SPIRIT14SYDQDNMELORRTMUTAUBYOSYD"},
+{id:"rc02",cat:"nz",line:"Royal Caribbean",name:"Anthem of the Seas: Северный остров и Пиктон",n:9,nl:"9 ночей",d:"2026-12-02",from:"2 дек",to:"11 дек",tags:[],
+ route:["Сидней","Бей-оф-Айлендс","Тауранга","Нейпир","Пиктон","Сидней"],
+ price:"A$3 597",cabin:"внутренняя каюта",note:"С балконом A$4 396",status:"ok",
+ url:"https://www.royalcaribbean.com/aus/en/itinerary/9-night-new-zealand-cruise-from-sydney-on-anthem-AN09K160?sailDate=2026-12-02&packageCode=AN09K160&groupId=AN09SYD-1331478220&country=AUS"},
+{id:"pr05",cat:"nz",line:"Princess Cruises",name:"Royal Princess: вокруг Новой Зеландии",n:13,nl:"13 ночей",d:"2026-12-05",from:"5 дек",to:"18 дек",tags:[],
+ route:["Сидней","Бей-оф-Айлендс","Окленд","Пиктон","Крайстчерч","Данидин","~Фьордленд","Сидней"],
+ price:"A$4 646",cabin:"внутренняя каюта",note:"С балконом A$6 886",status:"ok",
+ url:"https://www.princess.com/cruise-search/details/?voyageCode=1645"},
+{id:"rc19",cat:"nz",line:"Royal Caribbean",name:"Anthem of the Seas: рождественский рейс",n:9,nl:"9 ночей",d:"2026-12-19",from:"19 дек",to:"28 дек",tags:[X],
+ route:["Сидней","Бей-оф-Айлендс","Окленд","Тауранга","Сидней"],
+ price:"A$4 998",cabin:"внутренняя каюта",note:"С балконом A$6 798",status:"ok",
+ url:"https://www.royalcaribbean.com/aus/en/itinerary/9-night-new-zealand-holiday-cruise-from-sydney-on-anthem-AN09K161?sailDate=2026-12-19&packageCode=AN09K161&groupId=AN09SYD-448738219&country=AUS"},
+{id:"rc28",cat:"nz",line:"Royal Caribbean",name:"Anthem of the Seas: новогодний рейс с фьордами",n:9,nl:"9 ночей",d:"2026-12-28",from:"28 дек",to:"6 янв",tags:[N],
+ route:["Сидней","Пиктон","Крайстчерч","Данидин","~Даски, Даутфул и Милфорд-Саунд","Сидней"],
+ price:"A$7 397",cabin:"внутренняя каюта",note:"С балконом A$8 397; каюты с окном проданы",status:"ok",
+ url:"https://www.royalcaribbean.com/aus/en/itinerary/9-night-new-zealand-holiday-cruise-from-sydney-on-anthem-AN09K162?sailDate=2026-12-28&packageCode=AN09K162&groupId=AN09SYD-998728121&country=AUS"},
+{id:"az19",cat:"nz",line:"Azamara",name:"Azamara Pursuit: Окленд – Мельбурн, Новый год в Сиднее",n:16,nl:"16 ночей",d:"2026-12-19",from:"19 дек",to:"4 янв",tags:[X,N],
+ route:["Окленд","Тауранга","Нейпир","Веллингтон","Крайстчерч","Данидин","~Милфорд-Саунд (25 дек)","Хобарт (ночёвка)","Сидней (2 ночёвки, 31 дек)","Мельбурн"],
+ price:"US$7 658",cabin:"внутренняя каюта, налоги включены",note:"Скидка действует до 30 сентября. С окном US$14 118",status:"ok",
+ url:"https://www.azamara.com/cruises/pr261219-016-new-zealand-australia-holiday-cruise-wellington-hobart-sydney"},
+{id:"pr22",cat:"nz",line:"Princess Cruises",name:"Royal Princess: Рождество и Новый год в Новой Зеландии",n:13,nl:"13 ночей",d:"2026-12-22",from:"22 дек",to:"4 янв",tags:[X,N],
+ route:["Сидней","Бей-оф-Айлендс","Окленд","Пиктон","Крайстчерч","Данидин (31 дек)","~Фьордленд (1 янв)","Сидней"],
+ price:"A$8 828",cabin:"внутренняя каюта",note:"Осталось 16 кают. С балконом A$11 292",status:"few",
+ url:"https://www.princess.com/cruise-search/details/?voyageCode=1701"},
+{id:"az04",cat:"nz",line:"Azamara",name:"Azamara Pursuit: Сидней – Окленд через Тасманию",n:15,nl:"15 ночей",d:"2026-12-04",from:"4 дек",to:"19 дек",tags:[],
+ route:["Сидней","Иден","Хобарт","~Милфорд-Саунд","Данидин","Тимару","Крайстчерч","Пиктон","Веллингтон","Нейпир","Гисборн","Тауранга","Окленд"],
+ price:"US$10 598",cabin:"каюта с окном, налоги включены",note:"Все остальные классы кают проданы",status:"few",
+ url:"https://www.azamara.com/cruises/pr261204-015-australia-new-zealand-cruise-hobart-wellington-tauranga"},
+{id:"vk06",cat:"nz",line:"Viking",name:"Viking Venus: Окленд – Сидней",n:14,nl:"14 ночей",d:"2026-12-06",from:"6 дек",to:"20 дек",tags:[],
+ route:["Окленд (ночёвка)","Тауранга","Нейпир","Веллингтон","Крайстчерч","Данидин","Хобарт","Мельбурн","Сидней (ночёвка)"],
+ price:"US$22 798",cabin:"Deluxe Veranda (с балконом)",note:"Осталась 1 каюта. Без захода во фьорды. На странице выберите 2026 год и декабрь",status:"few",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/asia-australia/australia-new-zealand/pricing.html"},
+{id:"ce21",cat:"nz",line:"Celebrity Cruises",name:"Celebrity Edge: Рождество и Новый год в Новой Зеландии",n:12,nl:"12 ночей",d:"2026-12-21",from:"21 дек",to:"2 янв",tags:[X,N],
+ route:["Сидней (ночёвка)","~Милфорд, Даутфул и Даски-Саунд","Данидин","Крайстчерч","Окленд","Бей-оф-Айлендс","Сидней"],
+ price:"A$92 087",cabin:"остались только сьюты",note:"Цена подозрительно высокая — проверьте на сайте",status:"few",
+ url:"https://www.celebritycruises.com/au/itinerary/12-night-new-zealand-holiday-cruise-from-sydney-on-celebrity-EG12K184?sailDate=2026-12-21&packageCode=EG12K184&groupId=EG12SYD-2567708244&country=AUS"},
+{id:"pr23",cat:"nz",line:"Princess Cruises",name:"Grand Princess: из Брисбена в Новую Зеландию",n:14,nl:"14 ночей",d:"2026-12-23",from:"23 дек",to:"6 янв",tags:[X,N],
+ route:["Брисбен","Бей-оф-Айлендс","Окленд","Тауранга","Нейпир","Данидин (1 янв)","~Фьордленд","Брисбен"],
+ price:"—",cabin:"все каюты проданы",note:"",status:"sold",
+ url:"https://www.princess.com/cruise-search/details/?voyageCode=A701"},
+{id:"vk20",cat:"nz",line:"Viking",name:"Viking Venus: Сидней – Окленд",n:14,nl:"14 ночей",d:"2026-12-20",from:"20 дек",to:"3 янв",tags:[X,N],
+ route:["Сидней","Мельбурн","Хобарт","Данидин","Крайстчерч","Веллингтон","Нейпир","Тауранга","Окленд"],
+ price:"—",cabin:"все каюты проданы",note:"",status:"sold",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/asia-australia/australia-new-zealand/pricing.html"},
+{id:"ha28",cat:"nz",line:"Holland America Line",name:"Noordam: Южная Австралия и Новая Зеландия",n:28,nl:"28 дней",d:"2026-12-20",from:"20 дек",to:"17 янв",tags:[X,N],
+ route:["Сидней","Мельбурн","Аделаида","Хобарт","Сидней","~Милфорд-Саунд и Фьордленд","Данидин","Крайстчерч","Пиктон","Веллингтон","Нейпир","Тауранга","Окленд"],
+ price:"—",cabin:"все каюты проданы",note:"",status:"sold",
+ url:"https://www.hollandamerica.com/en/au/find-a-cruise/p6h28b/n677a"},
+
+/* ---- Только Австралия ---- */
+{id:"ncl12",cat:"au",line:"Norwegian Cruise Line",name:"Norwegian Spirit: Тасмания, Аделаида и остров Кенгуру",n:11,nl:"11 ночей",d:"2026-12-12",from:"12 дек",to:"23 дек",tags:[],
+ route:["Сидней","Хобарт","Аделаида (ночёвка)","Остров Кенгуру","Мельбурн (ночёвка)","Сидней"],
+ price:"€1 678",cabin:"внутренняя каюта",note:"С окном €2 304, с балконом €3 196",status:"ok",
+ url:"https://www.ncl.com/cruises/11-day-australia-melbourne-adelaide-and-kangaroo-island-SPIRIT11SYDHBAADLKANMELSYD"},
+{id:"pr18",cat:"au",line:"Princess Cruises",name:"Royal Princess: короткий рейс в Иден",n:4,nl:"4 ночи",d:"2026-12-18",from:"18 дек",to:"22 дек",tags:[],
+ route:["Сидней","Иден","Сидней"],
+ price:"A$2 010",cabin:"каюта с балконом",note:"Осталась 1 каюта; внутренние и с окном проданы",status:"few",
+ url:"https://www.princess.com/cruise-search/details/?voyageCode=1646"},
+{id:"ce12",cat:"au",line:"Celebrity Cruises",name:"Celebrity Edge: винный маршрут",n:9,nl:"9 ночей",d:"2026-12-12",from:"12 дек",to:"21 дек",tags:[],
+ route:["Сидней","Хобарт","Остров Кенгуру","Аделаида","Мельбурн","Сидней"],
+ price:"A$4 229",cabin:"внутренняя каюта",note:"С окном A$4 349; с балконом проданы",status:"ok",
+ url:"https://www.celebritycruises.com/au/itinerary/9-night-australia-wine-cruise-from-sydney-on-celebrity-EG09K155?sailDate=2026-12-12&packageCode=EG09K155&groupId=EG09SYD-1885518723&country=AUS"},
+{id:"oc03",cat:"au",line:"Oceania Cruises",name:"Riviera: побережье Квинсленда",n:12,nl:"12 ночей",d:"2026-12-03",from:"3 дек",to:"15 дек",tags:[],
+ route:["Сидней","Брисбен","Уитсандей","Таунсвилл","Кэрнс (ночёвка)","Сидней (ночёвка)"],
+ price:"€5 280",cabin:"внутренняя каюта",note:"Скидка 45% до 3 ноября. С балконом €7 260",status:"ok",
+ url:"https://www.oceaniacruises.com/cruises/RVA261203/"},
+{id:"ce01",cat:"au",line:"Celebrity Cruises",name:"Celebrity Edge: Большой Барьерный риф",n:11,nl:"11 ночей",d:"2026-12-01",from:"1 дек",to:"12 дек",tags:[],
+ route:["Сидней","Эрли-Бич (2 дня)","Кэрнс (2 дня)","Порт-Дуглас","~Остров Уиллис","Сидней"],
+ price:"A$7 235",cabin:"Concierge (с балконом)",note:"Более дешёвые классы кают проданы",status:"few",
+ url:"https://www.celebritycruises.com/au/itinerary/11-night-great-barrier-reef-cruise-from-sydney-on-celebrity-EG11K167?sailDate=2026-12-01&packageCode=EG11K167&groupId=EG11SYD-2862252231&country=AUS"},
+{id:"oc15",cat:"au",line:"Oceania Cruises",name:"Riviera: Сидней – Перт через Индонезию",n:23,nl:"23 ночи",d:"2026-12-15",from:"15 дек",to:"7 янв",tags:[X,N],
+ route:["Сидней","Брисбен","Уитсандей","Кэрнс","Куктаун","Дарвин","Купанг","Комодо","Бали (ночёвка)","Ломбок","Проболинго","Перт"],
+ price:"€9 816",cabin:"внутренняя каюта",note:"С балконом €13 212",status:"ok",
+ url:"https://www.oceaniacruises.com/cruises/RVA261215/"},
+{id:"cd26",cat:"au",line:"Coral Expeditions",name:"Coral Discoverer: Сидней – Хобарт, по следам регаты",n:7,nl:"7 ночей",d:"2026-12-26",from:"26 дек",to:"2 янв",tags:[N],
+ route:["Сидней","Бассов пролив","Остров Дил","Фрейсине","Остров Мария","Адвенчер-Бей (31 дек)","Хобарт"],
+ price:"A$15 260",cabin:"каюта на прогулочной палубе, всё включено",note:"Осталось 7 кают; самые дешёвые проданы",status:"few",
+ url:"https://www.coralexpeditions.com/cruises/tasmania/sydney-to-hobart-a-yachting-tradition"},
+{id:"vo11",cat:"au",line:"Viking",name:"Viking Orion: вокруг всей Австралии",n:31,nl:"32 дня",d:"2026-12-11",from:"11 дек",to:"11 янв",tags:[X,N],
+ route:["Сидней","вокруг Австралии","Сидней"],
+ price:"US$28 798",cabin:"каюта с балконом",note:"Список портов — на странице круиза",status:"ok",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/asia-australia/grand-australia-circumnavigation/index.html"},
+{id:"ha14",cat:"au",line:"Holland America Line",name:"Noordam: Южная Австралия и Тасмания",n:14,nl:"14 дней",d:"2026-12-20",from:"20 дек",to:"3 янв",tags:[X,N],
+ route:["Сидней","Остров Филлип","Мельбурн","Берни","Аделаида","Остров Кенгуру","Хобарт","Порт-Артур (31 дек)","Ньюкасл","Сидней"],
+ price:"A$42 198",cabin:"Pinnacle Suite — единственное, что осталось",note:"Все обычные каюты проданы",status:"few",
+ url:"https://www.hollandamerica.com/en/au/find-a-cruise/p6h14d/n677"},
+{id:"pr11",cat:"au",line:"Princess Cruises",name:"Grand Princess: Тасмания из Брисбена",n:12,nl:"12 ночей",d:"2026-12-11",from:"11 дек",to:"23 дек",tags:[],
+ route:["Брисбен","Ньюкасл","Сидней","Иден","Мельбурн","~Фрейсине","Хобарт","Порт-Артур","Брисбен"],
+ price:"—",cabin:"все каюты проданы",note:"",status:"sold",
+ url:"https://www.princess.com/cruise-search/details/?voyageCode=A644"},
+
+/* ---- Люкс ---- */
+{id:"ss04",cat:"lux",line:"Silversea",name:"Silver Moon: Сидней – Окленд",n:14,nl:"14 ночей",d:"2026-12-04",from:"4 дек",to:"18 дек",tags:[],
+ route:["Сидней","Хобарт","~Милфорд и Даутфул-Саунд","Остров Стюарт","Данидин","Акароа","Веллингтон","Нейпир","Гисборн","Тауранга","Окленд"],
+ price:"A$34 900",cabin:"Panorama Suite, всё включено",note:"Сьют с балконом — от A$37 800",status:"few",
+ url:"https://www.silversea.com/destinations/australia-new-zealand-cruise/sydney-to-auckland-mo261204014.html"},
+{id:"ss18",cat:"lux",line:"Silversea",name:"Silver Moon: Окленд – Мельбурн, Рождество во фьордах",n:16,nl:"16 ночей",d:"2026-12-18",from:"18 дек",to:"3 янв",tags:[X,N],
+ route:["Окленд","Тауранга","Пиктон","Крайстчерч","Данидин","Блафф","~Даутфул и Милфорд-Саунд (25 дек)","Хобарт (ночёвка)","Иден (31 дек)","Мельбурн (ночёвка)"],
+ price:"A$43 200",cabin:"Deluxe Veranda, всё включено",note:"Почти все остальные сьюты — в листе ожидания",status:"few",
+ url:"https://www.silversea.com/destinations/australia-new-zealand-cruise/auckland-to-melbourne-mo261218016.html"},
+{id:"rg29",cat:"lux",line:"Regent Seven Seas",name:"Seven Seas Explorer: Сидней – Окленд, Новый год в Мельбурне",n:16,nl:"16 ночей",d:"2026-12-29",from:"29 дек",to:"14 янв",tags:[N],
+ route:["Сидней","Мельбурн (31 дек – 1 янв)","Хобарт","~Милфорд, Даутфул и Даски-Саунд","Данидин","Крайстчерч","Пиктон","Веллингтон","Гисборн","Тауранга","Бей-оф-Айлендс","Окленд"],
+ price:"€33 618",cabin:"Veranda Suite, всё включено",note:"Только запись в лист ожидания",status:"wait",
+ url:"https://www.rssc.com/cruises/EXP261229/summary"},
+{id:"rg19",cat:"lux",line:"Regent Seven Seas",name:"Seven Seas Explorer: Рождество у берегов Австралии",n:10,nl:"10 ночей",d:"2026-12-19",from:"19 дек",to:"29 дек",tags:[X],
+ route:["Сидней","Иден","Мельбурн","Остров Филлип","Джелонг","Хобарт (26 дек)","Сидней (ночёвка)"],
+ price:"€17 058",cabin:"Veranda Suite, всё включено",note:"Только запись в лист ожидания",status:"wait",
+ url:"https://www.rssc.com/cruises/EXP261219/summary"},
+{id:"rg03",cat:"lux",line:"Regent Seven Seas",name:"Seven Seas Explorer: Бали – Сидней",n:16,nl:"16 ночей",d:"2026-12-03",from:"3 дек",to:"19 дек",tags:[],
+ route:["Бали","Ломбок","Комодо","Дарвин (ночёвка)","Куктаун","Кэрнс","Таунсвилл","Эрли-Бич","Брисбен","Сидней (ночёвка)"],
+ price:"€25 798",cabin:"Veranda Suite, всё включено",note:"Только запись в лист ожидания",status:"wait",
+ url:"https://www.rssc.com/cruises/EXP261203/summary"},
+{id:"oc40",cat:"lux",line:"Oceania Cruises",name:"Riviera: Сидней – Индонезия – Перт – Окленд",n:40,nl:"40 ночей",d:"2026-12-15",from:"15 дек",to:"24 янв",tags:[X,N],
+ route:["Сидней","Кэрнс","Дарвин","Комодо","Бали","Перт","Олбани","Аделаида","Мельбурн","Пиктон","Веллингтон","Нейпир","Гисборн","Тауранга","Окленд"],
+ price:"€38 978",cabin:"каюта с балконом",note:"Внутренние и с окном — только лист ожидания",status:"few",
+ url:"https://www.oceaniacruises.com/cruises/RVA261215A/"},
+
+/* ---- Экспедиции ---- */
+{id:"ca16",cat:"exp",line:"Coral Expeditions",name:"Coral Adventurer: фьорды и остров Стюарт",n:8,nl:"8 ночей",d:"2026-12-16",from:"16 дек",to:"24 дек",tags:[],
+ route:["Блафф","Остров Стюарт","Даски-Саунд","Даутфул-Саунд","Милфорд-Саунд","Острова Соландер","Блафф"],
+ price:"A$17 980",cabin:"каюта с иллюминатором, всё включено",note:"Осталось 5 кают",status:"few",
+ url:"https://www.coralexpeditions.com/cruises/new-zealand/sounds-and-stewart-island"},
+{id:"ca24",cat:"exp",line:"Coral Expeditions",name:"Coral Adventurer: Южный остров и Фьордленд",n:10,nl:"10 ночей",d:"2026-12-24",from:"24 дек",to:"3 янв",tags:[X,N],
+ route:["Блафф","Даски-Саунд","Даутфул-Саунд","Остров Стюарт","Данидин","Акароа","Каикоура","Шип-Коув","Веллингтон"],
+ price:"A$20 980",cabin:"каюта с иллюминатором, всё включено",note:"Осталось 6 кают",status:"few",
+ url:"https://www.coralexpeditions.com/cruises/new-zealand/south-island-and-fiordlands"},
+{id:"he27a",cat:"exp",line:"Heritage Expeditions",name:"Heritage Adventurer: за Фьордлендом — субантарктические острова",n:11,nl:"12 дней",d:"2026-12-27",from:"27 дек",to:"7 янв",tags:[N],
+ route:["Куинстаун","Блафф","Остров Кэмпбелл","Острова Окленд","Острова Снэрс","Остров Стюарт","3 дня во Фьордленде","Блафф"],
+ price:"US$26 108",cabin:"Worsley Suite",note:"Каюта за US$20 896 — только лист ожидания. Включены ночь в отеле и высадки",status:"few",
+ url:"https://www.heritage-expeditions.com/destinations/subantarctic-islands-travel/beyond-fiordland-cruise/"},
+{id:"he27b",cat:"exp",line:"Heritage Expeditions",name:"Heritage Adventurer: забытые острова Южного океана",n:7,nl:"8 дней",d:"2026-12-27",from:"27 дек",to:"3 янв",tags:[N],
+ route:["Куинстаун","Блафф","Остров Кэмпбелл","Острова Окленд","Острова Снэрс","Остров Стюарт","Блафф"],
+ price:"US$30 000",cabin:"Heritage Suite",note:"Каюта за US$14 690 — только лист ожидания",status:"few",
+ url:"https://www.heritage-expeditions.com/destinations/subantarctic-islands-travel/forgotten-islands-southern-ocean-cruise/"},
+{id:"he17",cat:"exp",line:"Heritage Expeditions",name:"Heritage Adventurer: «Галапагосы Южного океана»",n:11,nl:"12 дней",d:"2026-12-17",from:"17 дек",to:"28 дек",tags:[X],
+ route:["Куинстаун","Блафф","Острова Снэрс","Острова Окленд","Остров Маккуори (2 дня)","Остров Кэмпбелл","Блафф"],
+ price:"US$43 380",cabin:"Heritage Suite",note:"Каюта за US$25 190 — только лист ожидания",status:"few",
+ url:"https://www.heritage-expeditions.com/destinations/subantarctic-islands-travel/galapagos-southern-ocean-expedition-cruise/"},
+{id:"po28",cat:"exp",line:"Ponant",name:"Le Soléal: субантарктические острова Новой Зеландии",n:14,nl:"14 ночей",d:"2026-12-28",from:"28 дек",to:"11 янв",tags:[N],
+ route:["Данидин","Остров Ульва","Даутфул, Даски и Милфорд-Саунд","Острова Снэрс","Острова Окленд","Остров Маккуори","Остров Кэмпбелл","Острова Антиподов","Данидин"],
+ price:"A$52 660",cabin:"каюта с окном",note:"Последние каюты; бронирование только по запросу",status:"few",
+ url:"https://au.ponant.com/oceania-expedition-to-new-zealand-s-subantarctic-islands-so281226-10"},
+{id:"he02",cat:"exp",line:"Heritage Expeditions",name:"Heritage Adventurer: птицы субантарктики",n:16,nl:"17 дней",d:"2026-12-02",from:"2 дек",to:"18 дек",tags:[],
+ route:["Куинстаун","Блафф","Острова Снэрс","Острова Окленд","Остров Маккуори","Остров Кэмпбелл","Острова Антиподов","Острова Баунти","Острова Чатем","Блафф"],
+ price:"US$70 000",cabin:"Heritage Suite",note:"Каюта за US$37 070 — только лист ожидания",status:"few",
+ url:"https://www.heritage-expeditions.com/destinations/subantarctic-islands-travel/birding-down-under-cruise/"},
+{id:"po04",cat:"exp",line:"Ponant",name:"Le Soléal: Бали – Кэрнс через острова Индонезии",n:15,nl:"15 ночей",d:"2026-12-04",from:"4 дек",to:"19 дек",tags:[],
+ route:["Бали","Комодо","Маумере","Калабахи","Банда-Нейра","Залив Тритон","Асмат","Мыс Йорк","Остров Лизард","Кэрнс"],
+ price:"A$36 900",cabin:"каюта с балконом на верхней палубе",note:"Более дешёвые каюты проданы",status:"few",
+ url:"https://au.ponant.com/asia-tropical-odyssey-between-indonesia-and-north-east-australia-so041226-10"}
+];
+
+/* ---------- схемы маршрутов ---------- */
+const G = { // [долгота, широта]
+ "Сидней":[151.2,-33.87],"Иден":[149.9,-37.07],"Мельбурн":[144.95,-37.83],"Хобарт":[147.33,-42.88],"Аделаида":[138.5,-34.85],
+ "Остров Кенгуру":[137.6,-35.72],"Брисбен":[153.1,-27.4],"Ньюкасл":[151.78,-32.92],"Остров Филлип":[145.2,-38.48],"Джелонг":[144.36,-38.15],
+ "Берни":[145.9,-41.05],"Порт-Артур":[147.85,-43.15],"Фрейсине":[148.3,-42.15],"Остров Мария":[148.1,-42.65],"Адвенчер-Бей":[147.33,-43.35],
+ "Остров Дил":[147.3,-39.48],"Бассов пролив":[148.7,-39.1],"Эрли-Бич":[148.72,-20.27],"Таунсвилл":[146.8,-19.25],"Кэрнс":[145.78,-16.92],
+ "Порт-Дуглас":[145.47,-16.48],"Остров Уиллис":[149.97,-16.29],"Куктаун":[145.25,-15.47],"Дарвин":[130.84,-12.46],"Перт":[115.75,-32.05],
+ "Олбани":[117.88,-35.03],"Мыс Йорк":[142.5,-10.7],"Остров Лизард":[145.45,-14.67],
+ "Бали":[115.2,-8.75],"Ломбок":[116.07,-8.73],"Комодо":[119.5,-8.55],"Купанг":[123.58,-10.17],"Проболинго":[113.2,-7.75],"Маумере":[122.2,-8.62],
+ "Калабахи":[124.5,-8.22],"Банда-Нейра":[129.9,-4.52],"Залив Тритон":[134.1,-3.85],"Асмат":[138.1,-5.5],
+ "Окленд":[174.77,-36.84],"Бей-оф-Айлендс":[174.1,-35.27],"Тауранга":[176.17,-37.65],"Нейпир":[176.92,-39.48],"Гисборн":[178.02,-38.67],
+ "Веллингтон":[174.78,-41.28],"Пиктон":[174.0,-41.29],"Шип-Коув":[174.23,-41.1],"Каикоура":[173.68,-42.4],"Крайстчерч":[172.72,-43.6],
+ "Акароа":[172.97,-43.8],"Тимару":[171.25,-44.4],"Данидин":[170.62,-45.82],"Блафф":[168.33,-46.6],"Остров Стюарт":[168.1,-46.9],
+ "Остров Ульва":[168.13,-46.95],"Милфорд-Саунд":[167.9,-44.6],"Даутфул-Саунд":[166.9,-45.3],"Даски-Саунд":[166.5,-45.75],"Острова Соландер":[166.9,-46.57],
+ "Острова Снэрс":[166.6,-48.02],"Острова Окленд":[166.1,-50.7],"Остров Кэмпбелл":[169.15,-52.55],"Остров Маккуори":[158.9,-54.6],
+ "Острова Антиподов":[178.77,-49.68],"Острова Баунти":[179.05,-47.75],"Острова Чатем":[183.5,-43.95]
+};
+const ALIAS = {"Уитсандей":"Эрли-Бич"};
+const FJ = ["Даски-Саунд","Даутфул-Саунд","Милфорд-Саунд"];
+const LAND = [
+ [[142.5,-10.7],[143.5,-14.0],[145.3,-15.0],[146.0,-18.0],[148.5,-20.0],[150.8,-23.0],[153.0,-25.5],[153.6,-28.5],[152.5,-32.5],[151.2,-34.0],[150.0,-37.2],[148.0,-37.9],[146.3,-39.1],[144.5,-38.2],[141.0,-38.2],[139.7,-36.5],[138.0,-35.6],[138.5,-34.5],[137.6,-33.0],[137.0,-34.9],[135.6,-34.8],[134.0,-32.8],[131.0,-31.5],[126.0,-32.3],[123.5,-34.0],[120.0,-34.0],[117.9,-35.1],[115.0,-34.3],[115.7,-31.8],[114.0,-27.5],[113.5,-24.5],[114.2,-22.0],[117.0,-20.6],[121.0,-19.6],[122.3,-17.5],[124.5,-16.2],[126.5,-14.0],[128.5,-14.9],[129.8,-13.6],[130.8,-12.4],[132.6,-11.3],[135.5,-12.0],[136.9,-12.3],[135.8,-14.8],[139.0,-17.3],[140.8,-17.4],[141.6,-14.0],[141.9,-11.5]],
+ [[144.7,-40.7],[146.5,-41.1],[148.2,-40.8],[148.3,-42.2],[147.9,-43.2],[146.8,-43.6],[145.5,-42.9],[145.2,-41.8]],
+ [[172.7,-34.4],[174.3,-35.3],[175.5,-36.5],[175.9,-37.6],[178.0,-37.6],[178.5,-37.7],[178.0,-38.7],[177.9,-39.05],[177.0,-39.2],[176.9,-39.6],[177.0,-40.2],[175.3,-41.6],[174.7,-41.3],[175.1,-40.2],[173.8,-39.4],[174.6,-38.8],[174.8,-37.3],[174.2,-36.4],[173.0,-35.2]],
+ [[172.7,-40.5],[174.3,-41.0],[174.2,-41.9],[173.0,-43.2],[173.1,-43.8],[171.3,-44.3],[170.8,-45.9],[169.5,-46.6],[168.3,-46.6],[166.6,-46.2],[166.5,-45.6],[167.8,-44.4],[168.4,-44.0],[170.5,-43.0],[171.3,-41.8],[172.1,-40.8]],
+ [[167.5,-46.8],[168.2,-46.8],[168.1,-47.2],[167.5,-47.3]],
+ [[105.2,-6.8],[108.5,-6.7],[111,-6.5],[114.4,-7.7],[114.5,-8.7],[111,-8.3],[106.5,-7.4]],
+ [[114.5,-8.2],[116.7,-8.3],[119,-8.3],[123,-8.2],[125,-8.2],[125,-8.6],[120,-8.9],[116,-8.95],[114.6,-8.7]],
+ [[123.5,-10.3],[125,-9.0],[127.3,-8.4],[126.5,-9.2],[124.5,-10.2]],
+ [[131,-0.8],[134,-0.8],[135,-3.3],[138,-1.6],[141,-2.6],[145,-4.3],[147.8,-6.0],[146.5,-8],[150.5,-10.4],[147,-9.7],[144,-7.7],[143,-9.2],[141,-9.1],[138.5,-8.2],[137.8,-6.0],[134.5,-4.0],[132.8,-4.0],[133.9,-2.4],[132,-2.2]]
+];
+const NORTH = new Set(["Бей-оф-Айлендс","Окленд","Тауранга"]);
+const EAST  = new Set(["Гисборн","Нейпир","Каикоура","Крайстчерч","Акароа","Тимару","Данидин"]);
+const COOK  = new Set(["Веллингтон","Пиктон","Шип-Коув"]);
+const SOUTH = new Set(["Блафф","Остров Стюарт","Остров Ульва"]);
+const FJORD = new Set([...FJ,"Острова Соландер"]);
+const HOB_LOCAL = new Set(["Порт-Артур","Адвенчер-Бей","Фрейсине","Остров Мария"]);
+const ETRACK = [[178.7,-38.9],[177.6,-40.4],[176.4,-41.7],[174.7,-42.7],[173.7,-44.3],[171.7,-45.6]];
+const ECTRACK = [[150.6,-20.6],[153.7,-24.6],[154.1,-28.2],[153.0,-32.6]];
+const far = (p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1]);
+const isEC = p=>p[0]>145&&p[0]<155&&p[1]>-38&&p[1]<-10;
+const isNSW = p=>p[0]>150.4&&p[0]<156&&p[1]>-36;
+
+// Правила обхода суши: каждое возвращает промежуточные точки пути a→b или null
+const RULES = [
+ (a,b,pa,pb)=>{ if(a!=="Мельбурн"||far(pa,pb)<2.5) return null;
+   const w=[[144.6,-38.7]];
+   if(pb[0]>146) w.push([146.5,-39.7]); else if(pb[0]<142) w.push([143.3,-39.2],[140.3,-38.5]);
+   if(b==="Хобарт") w.push([148.8,-40.3],[148.8,-42.0],[147.9,-43.4]);
+   else if(isNSW(pb)) w.push([150.6,-37.6]);
+   else if(COOK.has(b)) w.push([172.4,-40.2],[174.4,-40.7]);
+   return w; },
+ (a,b,pa,pb)=>{ if(a!=="Хобарт"||HOB_LOCAL.has(b)||far(pa,pb)<2.5) return null;
+   const w=[[147.9,-43.4]];
+   if(pb[0]<146) w.push([145.2,-43.7],[143.8,-40.8]);
+   else if(pb[0]<160&&pb[1]>-41.5) w.push([148.8,-42.0],[148.8,-40.3]);
+   if(isNSW(pb)) w.push([150.6,-37.6]);
+   return w; },
+ (a,b,pa,pb)=> isNSW(pa)&&pb[1]<-38&&pb[0]<150 ? [[150.6,-37.6]] : null,
+ (a,b,pa,pb)=>{ if(!(isEC(pa)&&isEC(pb))||pa[1]<pb[1]) return null;
+   return ECTRACK.filter(t=>t[1]<pa[1]-0.3&&t[1]>pb[1]+0.3); },
+ (a,b)=> a==="Дарвин"&&(b==="Куктаун"||b==="Кэрнс") ? [[130.4,-11.5],[132.5,-10.6],[137,-10.5],[141.8,-10.3],[143.5,-11.2],[144.5,-13.6]] : null,
+ (a,b)=> a==="Проболинго"&&b==="Перт" ? [[112.5,-22],[112.8,-26],[114.5,-30.5]] : null,
+ (a,b)=> a==="Перт"&&b==="Олбани" ? [[114.6,-33.0],[114.8,-35.1]] : null,
+ (a,b)=> a==="Олбани"&&b==="Аделаида" ? [[136.0,-36.1],[138.2,-36.1]] : null,
+ (a,b,pa,pb)=>{ if(!NORTH.has(a)) return null;
+   if(NORTH.has(b)){
+     if(a==="Тауранга"&&b==="Бей-оф-Айлендс") return [[176.2,-36.2],[175.0,-35.5]];
+     if(a==="Тауранга"&&b==="Окленд") return [[176.2,-36.4],[175.4,-36.0]];
+     return null; }
+   if(pb[0]<165) return a==="Тауранга"?[[176.2,-36.2],[173.0,-34.0]]:a==="Окленд"?[[175.3,-36.0],[173.0,-34.0]]:[[173.0,-34.0]];
+   if(!(EAST.has(b)||COOK.has(b))) return null;
+   const w = a==="Тауранга"?[]:[[175.4,-36.0],[176.3,-36.4]];
+   w.push([178.9,-37.4]);
+   if(COOK.has(b)) w.push([178.7,-38.9],[177.6,-40.4],[176.4,-41.8],[175.0,-41.75]);
+   else ETRACK.forEach(t=>{ if(t[1]>pb[1]+0.3) w.push(t); });
+   return w; },
+ (a,b,pa,pb)=>{ if(!COOK.has(a)) return null;
+   if(pb[0]<165) return [[174.4,-40.7],[172.4,-40.2]];
+   if(!EAST.has(b)) return null;
+   if(pb[1]>-41) return [[175.0,-41.75],[176.4,-41.8]].concat(ETRACK.filter(t=>t[1]>-41.5&&t[1]<pb[1]-0.3).reverse());
+   return [[174.9,-41.75]].concat(ETRACK.filter(t=>t[1]<-42&&t[1]>pb[1]+0.3)); },
+ (a,b,pa,pb)=>{ if(!(EAST.has(a)&&EAST.has(b))||pa[1]<pb[1]) return null;
+   return ETRACK.filter(t=>t[1]<pa[1]-0.3&&t[1]>pb[1]+0.3); },
+ (a,b,pa)=>{ if(!EAST.has(a)||!(SOUTH.has(b)||FJORD.has(b))) return null;
+   const w = ETRACK.filter(t=>t[1]<pa[1]-0.3);
+   if(SOUTH.has(b)) w.push([169.9,-46.85]); else w.push([169.4,-47.1],[167.8,-47.6],[166.2,-46.5]);
+   return w; },
+ (a,b)=> SOUTH.has(a)&&FJORD.has(b) ? (b==="Острова Соландер"?[[167.6,-46.69]]:[[167.6,-46.69],[166.3,-46.45]]) : null,
+ (a,b,pa,pb)=> FJ.includes(a)&&pb[1]<-47 ? [[166.1,-46.2]] : null
+];
+function way(s,t){
+  for(const r of RULES){
+    let w = r(s.name,t.name,s.p,t.p); if(w) return w;
+    w = r(t.name,s.name,t.p,s.p); if(w) return w.slice().reverse();
+  }
+  return [];
+}
+function resolve(route){
+  const out=[];
+  for(const raw of route){
+    const scenic = raw[0]==="~";
+    const nm = raw.replace(/^~/,"").replace(/\s*\(.*\)$/,"");
+    let names;
+    if(/Фьордленд/.test(nm)) names = FJ.slice();
+    else if(/Саунд/.test(nm)&&/,| и /.test(nm)) names = FJ.filter(f=>nm.includes(f.split("-")[0]));
+    else names = [ALIAS[nm]||nm];
+    names = names.filter(n=>G[n]);
+    if(!names.length) continue;
+    if(names.length>1&&out.length){
+      const prev = out[out.length-1].p;
+      if(far(prev,G[names[names.length-1]])<far(prev,G[names[0]])) names.reverse();
+    }
+    for(const n of names){
+      if(out.length&&out[out.length-1].name===n) continue;
+      out.push({name:n,p:G[n],scenic});
+    }
+  }
+  return out;
+}
+const shortName = n=>n.replace(/^Остров /,"о. ").replace(/^Острова /,"о-ва ").replace("-Саунд","");
+const MW=320, MH=216, PADX=38, PADY=20;
+const mapCache = {};
+function mapSvg(c){
+  if(c.id in mapCache) return mapCache[c.id];
+  const stops = resolve(c.route);
+  const uniq = [];
+  stops.forEach(s=>{ if(!uniq.some(u=>u.name===s.name)) uniq.push(s); });
+  if(uniq.length<2) return mapCache[c.id]="";
+  const path=[];
+  stops.forEach((s,i)=>{ if(i) path.push(...way(stops[i-1],s)); path.push(s.p); });
+  const xs=path.map(p=>p[0]), ys=path.map(p=>p[1]);
+  const x0=Math.min(...xs), x1=Math.max(...xs), y0=Math.min(...ys), y1=Math.max(...ys);
+  const cx=(x0+x1)/2, cy=(y0+y1)/2, k=Math.cos(cy*Math.PI/180);
+  const sc=Math.min((MW-2*PADX)/Math.max((x1-x0)*k,12), (MH-2*PADY)/Math.max(y1-y0,8));
+  const P=p=>[MW/2+(p[0]-cx)*k*sc, MH/2-(p[1]-cy)*sc];
+  const f=v=>v.toFixed(1);
+  const d=pts=>pts.map((p,i)=>{const q=P(p);return (i?"L":"M")+f(q[0])+" "+f(q[1]);}).join("");
+
+  // сетка координат
+  const step = sc>14?2:sc>6?5:10, halfLon=MW/2/(k*sc), halfLat=MH/2/sc;
+  let grid="";
+  for(let g=Math.ceil((cx-halfLon)/step)*step; g<=cx+halfLon; g+=step){ const x=f(P([g,cy])[0]); grid+=`<line class="m-grid" x1="${x}" y1="0" x2="${x}" y2="${MH}"/>`; }
+  for(let g=Math.ceil((cy-halfLat)/step)*step; g<=cy+halfLat; g+=step){ const y=f(P([cx,g])[1]); grid+=`<line class="m-grid" x1="0" y1="${y}" x2="${MW}" y2="${y}"/>`; }
+
+  const land = LAND.map(poly=>`<path class="m-land" d="${d(poly)}Z"/>`).join("");
+  const first=stops[0].name, last=stops[stops.length-1].name;
+  const dots = uniq.map(s=>({s, q:P(s.p)}));
+  const boxes = dots.map(o=>[o.q[0]-5,o.q[1]-5,o.q[0]+5,o.q[1]+5]);
+  const hit=(a,b)=>a[0]<b[2]&&a[2]>b[0]&&a[1]<b[3]&&a[3]>b[1];
+  let labels="";
+  dots.forEach((o,i)=>{
+    const t=shortName(o.s.name), w=t.length*5.5+2, h=11, [x,y]=o.q;
+    const cands=[[x+7,y-h/2,"start",x+7],[x-7-w,y-h/2,"end",x-7],[x-w/2,y-7-h,"middle",x],[x-w/2,y+7,"middle",x]];
+    for(const cnd of cands){
+      const b=[cnd[0],cnd[1],cnd[0]+w,cnd[1]+h];
+      if(b[0]<2||b[2]>MW-2||b[1]<2||b[3]>MH-2) continue;
+      if(boxes.some((bb,j)=>!(j===i&&j<dots.length)&&hit(b,bb))) continue;
+      boxes.push(b);
+      labels+=`<text class="m-label" x="${f(cnd[3])}" y="${f(cnd[1]+h-2.5)}" text-anchor="${cnd[2]}">${t}</text>`;
+      break;
+    }
+  });
+  const circles = dots.map(o=>{
+    const cls = o.s.name===first?"start":o.s.name===last?"end":o.s.scenic?"scenic":"";
+    return `<circle class="m-dot ${cls}" cx="${f(o.q[0])}" cy="${f(o.q[1])}" r="${cls==="start"||cls==="end"?4.6:3.6}"/>`;
+  }).join("");
+  const label = "Схема маршрута: "+uniq.map(s=>s.name).join(" → ");
+  return mapCache[c.id]=`<svg viewBox="0 0 ${MW} ${MH}" role="img" aria-label="${label}">${grid}${land}<path class="m-route" d="${d(path)}"/>${circles}${labels}</svg>`;
+}
+
+const PICKS = ["ncl23","rc02","pr05"];
+const state = {cat:"all", free:false, holiday:false, sort:"pick"};
+const $ = id => document.getElementById(id);
+
+function host(u){ return new URL(u).hostname.replace(/^www\./,""); }
+
+function renderPicks(){
+  $("picks").innerHTML = PICKS.map(id=>{
+    const c = CRUISES.find(x=>x.id===id);
+    return `<a class="pick" href="${c.url}" target="_blank" rel="noopener">
+      <span class="pick-price">${c.price}</span>
+      <span class="pick-name">${c.line}</span>
+      <span class="pick-meta">${c.from} – ${c.to} · ${c.nl} · ${c.cabin}</span>
+      <span class="pick-go">Открыть на ${host(c.url)} ↗</span></a>`;
+  }).join("");
+}
+
+function renderChips(){
+  $("chips").innerHTML = CATS.map(k=>{
+    const n = k.id==="all" ? CRUISES.length : CRUISES.filter(c=>c.cat===k.id).length;
+    return `<button type="button" class="chip" id="chip-${k.id}" data-cat="${k.id}" aria-pressed="${state.cat===k.id}">${k.label}<span class="n">${n}</span></button>`;
+  }).join("");
+}
+
+function renderList(){
+  let rows = CRUISES.filter(c =>
+    (state.cat==="all" || c.cat===state.cat) &&
+    (!state.free || c.status==="ok" || c.status==="few") &&
+    (!state.holiday || c.tags.length>0));
+  if(state.sort==="date") rows = [...rows].sort((a,b)=>a.d.localeCompare(b.d) || a.n-b.n);
+  if(state.sort==="short") rows = [...rows].sort((a,b)=>a.n-b.n || a.d.localeCompare(b.d));
+  $("count").textContent = "Показано: " + rows.length + " из " + CRUISES.length;
+  if(!rows.length){ $("list").innerHTML = `<div class="empty">Под эти условия ничего не подходит — снимите один из фильтров.</div>`; return; }
+  $("list").innerHTML = rows.map(c=>{ const m = mapSvg(c); return `
+    <article class="cruise${c.status==="sold"?" is-sold":""}${m?"":" no-map"}">
+      <div class="when">
+        <span class="d">${c.from}</span>
+        <span class="to">по ${c.to}</span>
+        <span class="n">${c.nl}</span>
+      </div>
+      <div class="main">
+        <span class="line">${c.line}</span>
+        <h3 class="name">${c.name}</h3>
+        ${c.tags.length?`<div class="tags">${c.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>`:""}
+        <ol class="route">${c.route.map(p=>p[0]==="~"?`<li class="scenic">${p.slice(1)}</li>`:`<li>${p}</li>`).join("")}</ol>
+      </div>
+      ${m?`<div class="mapbox">${m}</div>`:""}
+      <div class="pay">
+        <span class="pill ${c.status}">${STATUS[c.status]}</span>
+        <span class="price">${c.price}<small>${c.status==="sold"?c.cabin:"на двоих · "+c.cabin}</small></span>
+        ${c.note?`<span class="pnote">${c.note}</span>`:""}
+        <a class="btn" href="${c.url}" target="_blank" rel="noopener" title="${host(c.url)}">Открыть на сайте ↗</a>
+        <span class="pnote">${host(c.url)}</span>
+      </div>
+    </article>`; }).join("");
+}
+
+$("chips").addEventListener("click", e=>{
+  const b = e.target.closest(".chip"); if(!b) return;
+  state.cat = b.dataset.cat; renderChips(); renderList();
+});
+$("only-free").addEventListener("change", e=>{ state.free = e.target.checked; renderList(); });
+$("only-holiday").addEventListener("change", e=>{ state.holiday = e.target.checked; renderList(); });
+$("sort").addEventListener("change", e=>{ state.sort = e.target.value; renderList(); });
+
+renderPicks(); renderChips(); renderList();
+</script>
+</body></html>
