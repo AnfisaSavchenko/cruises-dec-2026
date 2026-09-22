@@ -142,10 +142,24 @@ h2{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.15;ma
   .notes dd{margin-bottom:12px}
 }
 @media (prefers-reduced-motion:no-preference){.btn,.chip{transition:filter .15s,background .15s}}
+/* навигация между подборками */
+.sitenav{background:var(--hero-bg);border-bottom:1px solid var(--hero-line)}
+.sitenav .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:10px}
+.sitenav a{color:var(--hero-muted);text-decoration:none;font-size:14px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid transparent}
+.sitenav a:hover{color:var(--hero-ink)}
+.sitenav a[aria-current="page"]{color:var(--hero-ink);border-color:var(--hero-line)}
+.sitenav .brand{font-family:var(--display);font-size:16px;color:var(--hero-ink);margin-right:8px;padding-left:0}
 </style>
 
 </head>
 <body>
+<nav class="sitenav" aria-label="Подборки круизов">
+  <div class="wrap">
+    <span class="brand">Подборки круизов</span>
+    <a href="./" aria-current="page">Австралия и Новая Зеландия · декабрь</a>
+    <a href="med/">Средиземное море · ноябрь</a>
+  </div>
+</nav>
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Отправление в декабре 2026 · лето в Южном полушарии</div>

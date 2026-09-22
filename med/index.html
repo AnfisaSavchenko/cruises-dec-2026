@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Круизы по Средиземному морю с отправлением в конце октября и ноябре 2026: маршруты со схемами, даты, цены на двоих и ссылки на официальные сайты.">
+<meta name="robots" content="noindex">
+<title>Круизы по Средиземному морю 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Golos+Text:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ground:#EEF4F3; --surface:#FFFFFF; --ink:#10262B; --muted:#55696D; --line:#D3E0DE;
+  --sea:#0E4A5A; --accent:#1F6F5C; --accent-ink:#FFFFFF; --accent-soft:#DDEFE9;
+  --hero-bg:#0E4A5A; --hero-ink:#F1F8F7; --hero-muted:#A9CDD3; --hero-line:#2C6A79;
+  --sun:#8A5A0B; --sun-soft:#FBEFD2;
+  --map-sea:#DDECEF; --map-land:#FAFBF5; --map-coast:#9DBBBE;
+  --ok:#1F6F5C; --ok-soft:#DDEFE9; --warn:#8A5A0B; --warn-soft:#FBEFD2; --bad:#8C3B47; --bad-soft:#F6E1E4;
+  --display:"Forum","Georgia","Times New Roman",serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B1719; --surface:#12252A; --ink:#E4EFED; --muted:#93A9AC; --line:#23393E;
+    --sea:#8FD3E0; --accent:#57BFA0; --accent-ink:#06211B; --accent-soft:#173A33;
+    --hero-bg:#0F2F38; --hero-ink:#EAF5F4; --hero-muted:#8FB5BC; --hero-line:#24505B;
+    --sun:#F0C060; --sun-soft:#3A2E12; --map-sea:#0D2228; --map-land:#1E3B3E; --map-coast:#3A6166;
+    --ok:#6FD0B2; --ok-soft:#173A33; --warn:#F0C060; --warn-soft:#3A2E12; --bad:#F0A0AC; --bad-soft:#3D1E24;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1719; --surface:#12252A; --ink:#E4EFED; --muted:#93A9AC; --line:#23393E;
+  --sea:#8FD3E0; --accent:#57BFA0; --accent-ink:#06211B; --accent-soft:#173A33;
+  --hero-bg:#0F2F38; --hero-ink:#EAF5F4; --hero-muted:#8FB5BC; --hero-line:#24505B;
+  --sun:#F0C060; --sun-soft:#3A2E12; --map-sea:#0D2228; --map-land:#1E3B3E; --map-coast:#3A6166;
+  --ok:#6FD0B2; --ok-soft:#173A33; --warn:#F0C060; --warn-soft:#3A2E12; --bad:#F0A0AC; --bad-soft:#3D1E24;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink)}
+.hero .wrap{padding-block:36px 28px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--hero-muted);font-weight:500}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,56px);line-height:1.05;margin:0;text-wrap:balance}
+.lede{max-width:62ch;color:var(--hero-ink);margin:0;font-size:17px}
+.coords{display:flex;flex-wrap:wrap;gap:6px 22px;border-top:1px solid var(--hero-line);padding-top:14px;margin-top:6px;font-size:13px;color:var(--hero-muted);font-variant-numeric:tabular-nums}
+.coords b{color:var(--hero-ink);font-weight:500}
+
+/* picks */
+.section{padding-block:28px 0}
+h2{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.15;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 16px;max-width:65ch;font-size:15px}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pick{background:var(--accent-soft);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px;text-decoration:none}
+.pick:hover .pick-go{text-decoration:underline}
+.pick-price{font-family:var(--display);font-size:30px;line-height:1;color:var(--accent)}
+.pick-name{font-weight:600}
+.pick-meta{font-size:14px;color:var(--muted)}
+.pick-go{font-size:14px;font-weight:600;color:var(--accent);margin-top:auto;padding-top:6px}
+
+/* controls */
+.controls{display:flex;flex-direction:column;gap:12px;padding-block:24px 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:15px;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--sea);border-color:var(--sea);color:var(--ground)}
+.chip .n{opacity:.65;font-variant-numeric:tabular-nums;margin-left:4px}
+.toggles{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:15px}
+.toggles label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.toggles input{width:18px;height:18px;accent-color:var(--accent)}
+.toggles select{font:inherit;font-size:15px;padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.count{color:var(--muted);font-size:14px;margin-left:auto}
+
+/* list */
+.list{display:flex;flex-direction:column;gap:10px;padding-block:8px 8px}
+.cruise{background:var(--surface);border:1px solid var(--line);border-radius:6px;display:grid;grid-template-columns:128px minmax(0,1fr) 320px 214px;grid-template-areas:"when main map pay";gap:0}
+.cruise.no-map{grid-template-areas:"when main main pay"}
+.cruise>div{padding:18px}
+.when{grid-area:when}.main{grid-area:main}.mapbox{grid-area:map}.pay{grid-area:pay}
+.cruise>.mapbox{padding:12px 4px 12px 0;display:flex;align-items:center}
+.mapbox svg{display:block;width:100%;height:auto;border-radius:4px;background:var(--map-sea)}
+.m-land{fill:var(--map-land);stroke:var(--map-coast);stroke-width:.8;stroke-linejoin:round}
+.m-grid{stroke:var(--map-coast);stroke-width:.4;opacity:.45}
+.m-route{fill:none;stroke:var(--accent);stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.m-dot{fill:var(--surface);stroke:var(--sea);stroke-width:1.6}
+.m-dot.scenic{fill:var(--accent-soft);stroke:var(--accent)}
+.m-dot.start{fill:var(--accent);stroke:var(--surface)}
+.m-dot.end{fill:var(--ink);stroke:var(--surface)}
+.m-label{font-family:var(--body);font-size:9.5px;font-weight:500;fill:var(--ink);stroke:var(--map-sea);stroke-width:2.6;paint-order:stroke;stroke-linejoin:round}
+.when{border-right:1px dashed var(--line);display:flex;flex-direction:column;gap:4px}
+.when .d{font-family:var(--display);font-size:24px;line-height:1.1}
+.when .to{font-size:14px;color:var(--muted)}
+.when .n{font-size:14px;font-weight:600;color:var(--sea);margin-top:4px}
+.main{display:flex;flex-direction:column;gap:8px;min-width:0}
+.line{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.name{font-size:19px;font-weight:600;line-height:1.25;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--sun-soft);color:var(--sun)}
+.route{display:flex;flex-wrap:wrap;gap:2px 0;font-size:15px;color:var(--ink);margin:0;padding:0;list-style:none}
+.route li:not(:last-child)::after{content:"→";color:var(--muted);margin:0 7px}
+.route li.scenic{color:var(--accent);font-style:italic}
+.route li.scenic::before{content:"≈ ";font-style:normal}
+.pay{border-left:1px dashed var(--line);display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.price{font-family:var(--display);font-size:30px;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price small{font-family:var(--body);font-size:13px;color:var(--muted);display:block;margin-top:4px;white-space:normal}
+.pnote{font-size:13.5px;color:var(--muted)}
+.pill{font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:999px}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.few,.pill.wait{background:var(--warn-soft);color:var(--warn)}
+.pill.sold{background:var(--bad-soft);color:var(--bad)}
+.btn{margin-top:auto;display:inline-block;white-space:nowrap;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:9px 14px;border-radius:6px}
+.btn:hover{filter:brightness(1.08)}
+.cruise.is-sold .price,.cruise.is-sold .name,.cruise.is-sold .when .d{color:var(--muted)}
+.cruise.is-sold .btn{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:6px}
+
+/* notes */
+.notes{padding-block:28px 48px}
+.notes dl{display:grid;grid-template-columns:200px 1fr;gap:10px 24px;margin:0;font-size:15px}
+.notes dt{font-weight:600}
+.notes dd{margin:0;color:var(--muted);max-width:65ch}
+.legend{font-size:14px;color:var(--muted);margin:0 0 4px}
+.legend i{color:var(--accent)}
+
+@media (max-width:1060px){
+  .cruise,.cruise.no-map{grid-template-columns:128px minmax(0,1fr) 214px;grid-template-areas:"when main pay" "when map pay"}
+  .cruise>.mapbox{padding:0 18px 18px;max-width:420px}
+}
+@media (max-width:760px){
+  .picks{grid-template-columns:1fr}
+  .cruise,.cruise.no-map{grid-template-columns:minmax(0,1fr);grid-template-areas:"when" "main" "map" "pay"}
+  .cruise>.mapbox{padding:0 16px 14px;max-width:none}
+  .cruise>div{padding:14px 16px}
+  .when{border-right:0;border-bottom:1px dashed var(--line);flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+  .when .n{margin:0 0 0 auto}
+  .pay{border-left:0;border-top:1px dashed var(--line)}
+  .btn{margin-top:6px}
+  .count{margin-left:0;width:100%}
+  .notes dl{grid-template-columns:1fr;gap:2px 0}
+  .notes dd{margin-bottom:12px}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.chip{transition:filter .15s,background .15s}}
+/* навигация между подборками */
+.sitenav{background:var(--hero-bg);border-bottom:1px solid var(--hero-line)}
+.sitenav .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:10px}
+.sitenav a{color:var(--hero-muted);text-decoration:none;font-size:14px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid transparent}
+.sitenav a:hover{color:var(--hero-ink)}
+.sitenav a[aria-current="page"]{color:var(--hero-ink);border-color:var(--hero-line)}
+.sitenav .brand{font-family:var(--display);font-size:16px;color:var(--hero-ink);margin-right:8px;padding-left:0}
+/* выделение главной цели поиска */
+.target{background:var(--sun-soft);border:1px solid var(--sun);border-radius:6px;padding:16px 18px;margin-block:20px 0}
+.target h2{margin-bottom:6px}
+.target p{margin:0;color:var(--ink);max-width:70ch;font-size:15px}
+.tag.match{background:var(--accent);color:var(--accent-ink)}
+.cruise.is-match{border-color:var(--accent);border-width:2px}
+</style>
+</head>
+<body>
+<nav class="sitenav" aria-label="Подборки круизов">
+  <div class="wrap">
+    <span class="brand">Подборки круизов</span>
+    <a href="../">Австралия и Новая Зеландия · декабрь</a>
+    <a href="./" aria-current="page">Средиземное море · ноябрь</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Конец октября и ноябрь 2026 · межсезонье</div>
+    <h1>Круизы по Средиземному морю</h1>
+    <p class="lede" id="lede"></p>
+    <div class="coords" aria-hidden="true">
+      <span><b>Барселона</b> 41°23′ с. ш.</span>
+      <span><b>Рим</b> 42°05′ с. ш.</span>
+      <span><b>Афины</b> 37°56′ с. ш.</span>
+      <span><b>Ла-Валлетта</b> 35°54′ с. ш.</span>
+      <span><b>Родос</b> 36°26′ с. ш.</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="target" aria-labelledby="target-h">
+    <h2 id="target-h">Ваши даты: 11 ноября, 5 дней</h2>
+    <p id="target-text"></p>
+  </section>
+
+  <section class="section" aria-labelledby="picks-h">
+    <h2 id="picks-h">Ближе всего к запросу</h2>
+    <p class="sub">Самые подходящие варианты по дате и длительности.</p>
+    <div class="picks" id="picks"></div>
+  </section>
+
+  <section aria-labelledby="all-h">
+    <div class="controls">
+      <h2 id="all-h">Все круизы</h2>
+      <div class="chips" id="chips" role="group" aria-label="Регион"></div>
+      <div class="toggles">
+        <label for="only-free"><input type="checkbox" id="only-free"> Только где есть места</label>
+        <label for="sort">Порядок:
+          <select id="sort">
+            <option value="pick">как в подборке</option>
+            <option value="date">по дате отправления</option>
+            <option value="short">сначала короткие</option>
+          </select>
+        </label>
+        <span class="count" id="count" aria-live="polite"></span>
+      </div>
+      <p class="legend">На схемах зелёная точка — порт отправления, тёмная — прибытия. Линии показывают порядок портов и обходят сушу, но это не точный путь судна.</p>
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section class="notes" aria-labelledby="notes-h">
+    <h2 id="notes-h">Что важно знать</h2>
+    <p class="sub">Прежде чем бронировать.</p>
+    <dl>
+      <dt>Ровно 11 ноября</dt>
+      <dd>Пятидневных круизов в этот день нет ни у одной компании. Ближайшие по смыслу варианты — отправление 9, 10, 12 или 13 ноября; они отмечены меткой «Ваши даты».</dd>
+      <dt>Что входит в цену</dt>
+      <dd>У Costa налоги и портовые сборы уже включены, но сервисный сбор около €11 с человека за ночь платится на борту. У MSC в таблице показана сумма тарифа и портовых сборов — возможно, на сайте сборы уже включены в цену, тогда итог будет ниже; сервисный сбор около €12 с человека за ночь платится отдельно.</dd>
+      <dt>Валюта</dt>
+      <dd>Все цены в евро с европейских версий сайтов. Британская и итальянская версии MSC из этой сети не открылись, а цены там могут отличаться.</dd>
+      <dt>Перелёты</dt>
+      <dd>Ни в одну цену не входят. У маршрутов «из порта А в порт Б» прилетать и улетать придётся из разных городов — это обычно дороже, чем кольцевой рейс.</dd>
+      <dt>Цены меняются</dt>
+      <dd>Это снимок на 22 сентября 2026. Перед покупкой проверьте цену по ссылке.</dd>
+    </dl>
+  </section>
+</main>
+<script>
+/* ---------- география Средиземноморья ---------- */
+/* Водное кольцо: обход берега Средиземного моря с выходом в Атлантику.
+   Рисуется по правилу evenodd: прямоугольник (суша) минус вода плюс острова. */
+const WATER = [
+/* Испания, с запада на восток */
+[-5.60,36.00],[-5.35,36.15],[-4.42,36.72],[-3.50,36.73],[-2.60,36.75],[-2.10,36.95],[-1.80,37.20],[-1.45,37.40],
+[-0.85,37.58],[-0.65,38.20],[0.22,38.78],[-0.10,39.50],[0.35,40.50],[0.95,41.00],[1.60,41.20],[2.25,41.40],
+[3.20,41.90],[3.10,42.45],
+/* Франция */
+[3.05,43.05],[4.10,43.55],[4.85,43.40],[5.35,43.30],[6.00,43.10],[6.75,43.20],[7.45,43.72],
+/* Италия, тирренский берег */
+[8.20,44.15],[8.75,44.42],[9.85,44.05],[10.05,43.90],[10.28,43.50],[10.50,42.95],[11.15,42.40],[11.80,42.10],
+[12.25,41.73],[13.00,41.25],[13.70,41.25],[14.05,40.82],[14.45,40.78],[14.90,40.63],[15.28,40.02],[15.90,40.00],
+[16.20,39.40],[15.90,39.00],[15.63,38.22],
+/* носок и каблук */
+[16.10,38.72],[16.57,38.50],[17.18,38.92],[16.56,39.60],[16.90,40.45],[17.40,40.50],[17.95,40.68],[18.50,40.15],
+/* Адриатика, итальянский берег */
+[18.35,40.95],[17.40,41.05],[16.50,41.20],[16.20,41.90],[15.90,41.60],[15.10,41.95],[14.05,42.45],[13.50,43.60],
+[12.45,44.10],[12.25,44.60],[12.40,45.45],
+/* Словения, Хорватия, Черногория, Албания */
+[13.60,45.80],[13.80,45.45],[14.50,45.30],[14.35,44.90],[14.90,44.70],[15.35,44.20],[16.20,43.50],[17.35,42.90],
+[18.10,42.62],[18.55,42.40],[19.00,42.10],[19.30,41.85],[19.45,41.30],[19.50,40.90],[19.95,40.40],[20.20,39.65],
+[20.00,39.35],
+/* Греция: запад, Пелопоннес, Аттика, восток */
+[20.75,38.85],[21.15,38.30],[21.35,38.15],[21.40,37.65],[21.55,37.25],[21.70,36.85],[22.15,36.75],[22.40,36.40],
+[22.60,36.80],[23.05,36.75],[23.20,37.40],[22.85,37.55],[23.15,37.75],[23.63,37.90],[23.90,38.00],[24.05,38.20],
+[23.40,38.50],[23.00,38.85],[22.90,39.30],[23.40,39.20],[23.10,39.50],[23.70,40.20],[24.40,40.60],[25.90,40.85],
+[26.30,40.70],
+/* Дарданеллы и Мраморное море, расширены для схемы */
+[26.60,40.70],[27.30,40.80],[28.30,40.85],[29.10,41.10],[29.00,40.65],[28.00,40.40],[27.00,40.30],[26.30,40.10],
+/* эгейский берег Турции */
+[26.20,39.90],[26.20,39.60],[26.70,39.30],[26.60,38.90],[27.05,38.75],[26.75,38.40],[27.15,38.45],[26.85,38.25],
+[27.25,37.95],[27.30,37.70],[27.20,37.30],[27.45,37.05],[27.70,36.95],[28.10,36.65],[28.50,36.80],[29.10,36.55],
+/* южный берег Турции */
+[29.70,36.15],[30.50,36.30],[30.60,36.90],[31.40,36.80],[32.00,36.55],[33.00,36.30],[33.70,36.25],[34.10,36.65],
+[35.00,36.55],[35.60,36.60],[36.15,36.00],
+/* Левант */
+[35.90,35.50],[35.60,34.90],[35.40,34.40],[35.00,33.90],[34.90,33.20],[34.85,32.50],[34.60,31.80],[34.40,31.40],
+[34.25,31.22],
+/* Египет и Ливия */
+[33.60,31.10],[32.30,31.25],[31.50,31.45],[30.40,31.50],[29.90,31.20],[29.00,30.85],[28.00,30.90],[27.00,31.30],
+[26.00,31.50],[25.15,31.60],[24.70,32.00],[23.90,32.20],[23.10,32.40],[22.30,32.60],[21.60,32.90],[20.90,32.70],
+[20.10,32.30],[19.50,31.50],[18.70,30.80],[17.50,30.90],[16.50,31.30],[15.30,31.20],[14.50,32.50],[13.20,32.90],
+/* Тунис */
+[12.00,33.00],[11.50,33.20],[11.10,33.60],[10.50,33.70],[10.10,34.30],[10.80,34.80],[10.50,35.70],[11.00,36.80],
+[10.30,36.90],[10.00,37.30],[9.20,37.20],[8.60,36.90],
+/* Алжир и Марокко */
+[7.80,36.90],[7.00,36.90],[6.00,36.95],[5.00,36.70],[4.00,36.90],[3.00,36.80],[2.00,36.60],[1.00,36.50],
+[0.00,36.00],[-0.50,35.70],[-1.50,35.70],[-2.50,35.40],[-3.50,35.30],[-4.50,35.20],[-5.30,35.90],
+/* выход в Атлантику и берег Португалии */
+[-5.90,35.80],[-6.90,34.00],[-9.80,31.50],[-13.00,28.00],[-18.50,27.50],[-18.50,45.00],[-9.30,43.80],
+[-8.90,41.90],[-9.50,38.70],[-8.80,37.00],[-7.40,37.20],[-6.30,36.60]
+];
+
+const ISLANDS = [
+/* Балеары */
+[[2.35,39.55],[3.15,39.78],[3.45,39.72],[3.05,39.30],[2.75,39.30]],
+[[3.80,40.05],[4.30,39.93],[3.95,39.80]],
+[[1.22,39.05],[1.60,38.98],[1.40,38.65]],
+/* Корсика и Сардиния */
+[[8.55,42.65],[9.35,42.70],[9.55,42.30],[9.40,41.75],[9.20,41.37],[8.70,41.55],[8.55,42.00]],
+[[8.20,41.10],[9.25,41.25],[9.65,40.90],[9.70,40.50],[9.55,39.90],[9.60,39.15],[9.00,39.20],[8.40,38.90],[8.40,39.60],[8.45,40.30]],
+/* Сицилия, Мальта, Эльба, Капри */
+[[12.43,37.80],[13.35,38.20],[14.50,38.05],[15.25,38.30],[15.65,38.25],[15.10,37.45],[15.10,36.90],[14.50,36.70],[13.00,37.50]],
+[[14.34,35.98],[14.57,35.95],[14.55,35.80],[14.34,35.86]],
+[[10.10,42.80],[10.43,42.85],[10.42,42.73],[10.10,42.75]],
+[[14.20,40.57],[14.29,40.57],[14.27,40.53],[14.20,40.54]],
+/* Ионические */
+[[19.65,39.80],[19.95,39.75],[20.10,39.45],[19.85,39.38]],
+[[20.35,38.30],[20.65,38.30],[20.60,38.05],[20.35,38.10]],
+[[20.65,37.90],[20.95,37.85],[20.90,37.70]],
+/* Крит и Киклады */
+[[23.55,35.30],[24.30,35.60],[25.20,35.45],[25.75,35.35],[26.30,35.30],[26.10,35.00],[25.00,35.00],[24.00,35.05]],
+[[25.35,36.48],[25.48,36.46],[25.43,36.33],[25.36,36.38]],
+[[25.25,37.50],[25.42,37.48],[25.35,37.38],[25.26,37.42]],
+[[25.35,37.15],[25.60,37.10],[25.50,36.90],[25.36,37.00]],
+[[25.05,37.12],[25.25,37.10],[25.20,36.95],[25.06,37.00]],
+[[24.85,37.50],[24.98,37.48],[24.93,37.35],[24.86,37.40]],
+[[24.35,36.78],[24.55,36.75],[24.45,36.65],[24.36,36.70]],
+/* восточные Эгейские и Додеканес */
+[[26.00,39.30],[26.60,39.35],[26.50,39.00],[26.10,39.05]],
+[[25.95,38.55],[26.20,38.55],[26.15,38.20],[25.98,38.25]],
+[[26.60,37.80],[27.00,37.80],[26.95,37.65],[26.60,37.70]],
+[[26.50,37.35],[26.60,37.33],[26.55,37.25],[26.50,37.28]],
+[[26.90,36.85],[27.35,36.95],[27.30,36.75],[26.92,36.78]],
+[[27.95,36.45],[28.25,36.45],[28.25,36.10],[27.78,36.15]],
+/* Кипр */
+[[32.30,35.05],[33.50,35.40],[34.55,35.65],[34.00,34.95],[33.40,34.60],[32.45,34.70]],
+/* Мадейра и Канары */
+[[-17.25,32.85],[-16.65,32.75],[-16.70,32.65],[-17.25,32.75]],
+[[-16.90,28.55],[-16.10,28.45],[-16.20,28.00],[-16.70,28.20]],
+[[-15.70,28.15],[-15.35,28.15],[-15.40,27.75],[-15.72,27.90]],
+[[-13.85,29.25],[-13.40,29.00],[-13.50,28.85],[-13.87,29.10]],
+[[-14.00,28.75],[-13.80,28.75],[-13.85,28.05],[-14.20,28.40]],
+[[-18.00,28.85],[-17.75,28.85],[-17.78,28.45],[-17.95,28.55]]
+];
+
+/* порты: [долгота, широта] */
+const G = {
+"Барселона":[2.18,41.38],"Пальма-де-Майорка":[2.64,39.57],"Ибица":[1.43,38.91],"Менорка":[4.26,39.89],
+"Валенсия":[-0.33,39.45],"Малага":[-4.42,36.72],"Аликанте":[-0.48,38.34],"Картахена":[-0.98,37.60],
+"Таррагона":[1.25,41.11],"Кадис":[-6.29,36.53],"Гибралтар":[-5.35,36.14],"Танжер":[-5.80,35.78],
+"Касабланка":[-7.62,33.60],"Лиссабон":[-9.14,38.71],"Мальта":[14.51,35.90],"Ла-Валлетта":[14.51,35.90],
+"Марсель":[5.37,43.30],"Тулон":[5.93,43.12],"Ницца":[7.27,43.70],"Вильфранш":[7.31,43.70],"Канны":[7.02,43.55],
+"Монако":[7.42,43.73],"Аяччо":[8.74,41.93],"Бастия":[9.45,42.70],"Кальяри":[9.11,39.22],"Ольбия":[9.50,40.92],
+"Генуя":[8.93,44.41],"Савона":[8.48,44.31],"Ла-Специя":[9.83,44.10],"Ливорно":[10.31,43.55],
+"Портофино":[9.21,44.30],"Эльба":[10.33,42.81],"Чивитавеккья":[11.79,42.09],"Рим":[11.79,42.09],
+"Неаполь":[14.26,40.84],"Салерно":[14.76,40.68],"Сорренто":[14.37,40.63],"Капри":[14.24,40.55],
+"Амальфи":[14.60,40.63],"Мессина":[15.55,38.19],"Палермо":[13.36,38.12],"Катания":[15.09,37.50],
+"Сиракуза":[15.29,37.06],"Трапани":[12.50,38.02],"Таормина":[15.29,37.82],"Бари":[16.87,41.13],
+"Бриндизи":[17.95,40.64],"Венеция":[12.34,45.44],"Триест":[13.77,45.65],"Равенна":[12.28,44.49],
+"Анкона":[13.51,43.62],"Копер":[13.73,45.55],"Риека":[14.44,45.33],"Задар":[15.23,44.12],
+"Шибеник":[15.89,43.73],"Сплит":[16.44,43.51],"Хвар":[16.44,43.17],"Дубровник":[18.09,42.65],
+"Котор":[18.77,42.42],"Бар":[19.09,42.09],"Дуррес":[19.45,41.31],"Саранда":[20.00,39.87],
+"Корфу":[19.92,39.62],"Катаколон":[21.32,37.65],"Закинф":[20.90,37.79],"Кефалония":[20.49,38.17],
+"Афины":[23.63,37.94],"Пирей":[23.63,37.94],"Нафплион":[22.80,37.57],"Монемвасия":[23.05,36.69],
+"Миконос":[25.33,37.45],"Санторини":[25.43,36.40],"Наксос":[25.53,37.10],"Парос":[25.15,37.08],
+"Сирос":[24.94,37.44],"Милос":[24.44,36.72],"Родос":[28.22,36.44],"Кос":[27.29,36.89],
+"Патмос":[26.55,37.31],"Ираклион":[25.13,35.34],"Ханья":[24.07,35.50],"Агиос-Николаос":[25.72,35.19],
+"Хиос":[26.14,38.37],"Лесбос":[26.55,39.10],"Самос":[26.97,37.75],"Волос":[22.94,39.36],
+"Салоники":[22.93,40.63],"Кушадасы":[27.26,37.86],"Измир":[27.14,38.42],"Бодрум":[27.43,37.03],
+"Мармарис":[28.27,36.85],"Анталья":[30.70,36.88],"Стамбул":[28.98,41.02],"Чанаккале":[26.41,40.15],
+"Лимасол":[33.05,34.65],"Хайфа":[34.99,32.82],"Ашдод":[34.64,31.80],"Александрия":[29.92,31.20],
+"Порт-Саид":[32.30,31.26],"Тунис":[10.30,36.82],"Ла-Гулет":[10.30,36.82],"Бизерта":[9.87,37.28],
+"Фуншал":[-16.91,32.65],"Лас-Пальмас":[-15.43,28.13],"Тенерифе":[-16.25,28.47],"Арресифе":[-13.55,28.96],
+"Пуэрто-дель-Росарио":[-13.86,28.50],"Санта-Крус-де-ла-Пальма":[-17.76,28.68],"Аррецифе":[-13.55,28.96]
+};
+
+/* ---------- определение «это море?» ---------- */
+function inRing(ring,p){
+  let hit=false;
+  for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+    const a=ring[i],b=ring[j];
+    if((a[1]>p[1])!==(b[1]>p[1]) && p[0] < (b[0]-a[0])*(p[1]-a[1])/(b[1]-a[1])+a[0]) hit=!hit;
+  }
+  return hit;
+}
+function isSea(p){
+  if(!inRing(WATER,p)) return false;
+  for(const isl of ISLANDS) if(inRing(isl,p)) return false;
+  return true;
+}
+function clear(a,b){
+  const steps = Math.max(4, Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/0.18));
+  for(let i=1;i<steps;i++){
+    const t=i/steps;
+    if(!isSea([a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t])) return false;
+  }
+  return true;
+}
+
+/* ---------- сетка моря и поиск пути ---------- */
+const STEP=0.4, LON0=-19, LAT0=27, COLS=141, ROWS=51;
+let SEA=null;
+function grid(){
+  if(SEA) return SEA;
+  SEA=new Uint8Array(COLS*ROWS);
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++)
+    SEA[r*COLS+c]= isSea([LON0+c*STEP, LAT0+r*STEP]) ? 1 : 0;
+  return SEA;
+}
+function cellOf(p){ return [Math.round((p[0]-LON0)/STEP), Math.round((p[1]-LAT0)/STEP)]; }
+function snap(p){
+  const g=grid(), [c0,r0]=cellOf(p);
+  let best=null, bd=1e9;
+  for(let rad=0;rad<=6 && !best;rad++){
+    for(let dr=-rad;dr<=rad;dr++) for(let dc=-rad;dc<=rad;dc++){
+      if(Math.max(Math.abs(dr),Math.abs(dc))!==rad) continue;
+      const c=c0+dc, r=r0+dr;
+      if(c<0||r<0||c>=COLS||r>=ROWS||!g[r*COLS+c]) continue;
+      const q=[LON0+c*STEP, LAT0+r*STEP], d=Math.hypot(q[0]-p[0],q[1]-p[1]);
+      if(d<bd){ bd=d; best=[c,r]; }
+    }
+  }
+  return best;
+}
+function bfs(a,b){
+  const g=grid(), s=snap(a), t=snap(b);
+  if(!s||!t) return null;
+  const si=s[1]*COLS+s[0], ti=t[1]*COLS+t[0];
+  if(si===ti) return [];
+  const prev=new Int32Array(COLS*ROWS).fill(-1);
+  prev[si]=si;
+  let q=[si];
+  while(q.length){
+    const nq=[];
+    for(const cur of q){
+      const cc=cur%COLS, cr=(cur-cc)/COLS;
+      for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++){
+        if(!dr&&!dc) continue;
+        const c=cc+dc, r=cr+dr;
+        if(c<0||r<0||c>=COLS||r>=ROWS) continue;
+        const ni=r*COLS+c;
+        if(prev[ni]!==-1||!g[ni]) continue;
+        prev[ni]=cur;
+        if(ni===ti){ q=[]; nq.length=0; dr=2; dc=2; break; }
+        nq.push(ni);
+      }
+      if(prev[ti]!==-1) break;
+    }
+    if(prev[ti]!==-1) break;
+    q=nq;
+  }
+  if(prev[ti]===-1) return null;
+  const path=[];
+  for(let cur=ti; cur!==si; cur=prev[cur]){
+    const c=cur%COLS, r=(cur-c)/COLS;
+    path.push([LON0+c*STEP, LAT0+r*STEP]);
+  }
+  path.reverse();
+  return path;
+}
+/* убираем лишние точки: оставляем только те, без которых путь пересёк бы сушу */
+function simplify(a,pts,b){
+  const full=[a,...pts,b], out=[];
+  let i=0;
+  while(i<full.length-1){
+    let j=full.length-1;
+    while(j>i+1 && !clear(full[i],full[j])) j--;
+    if(j<full.length-1) out.push(full[j]);
+    i=j;
+  }
+  return out;
+}
+/* подтягиваем точки к прямой, пока путь остаётся по морю */
+function smooth(a,pts,b){
+  let cur=pts.map(p=>p.slice());
+  for(let pass=0;pass<24;pass++){
+    let moved=false;
+    for(let i=0;i<cur.length;i++){
+      const prev=i?cur[i-1]:a, next=i<cur.length-1?cur[i+1]:b;
+      const aim=[(prev[0]+next[0])/2,(prev[1]+next[1])/2];
+      for(const t of [1,.6,.3,.15]){
+        const q=[cur[i][0]+(aim[0]-cur[i][0])*t, cur[i][1]+(aim[1]-cur[i][1])*t];
+        if(Math.hypot(q[0]-cur[i][0],q[1]-cur[i][1])<0.02) break;
+        if(isSea(q)&&clear(prev,q)&&clear(q,next)){ cur[i]=q; moved=true; break; }
+      }
+    }
+    if(!moved) break;
+  }
+  return cur.filter((p,i)=>{
+    const prev=i?cur[i-1]:a, next=i<cur.length-1?cur[i+1]:b;
+    return !clear(prev,next);
+  });
+}
+const legCache={};
+function leg(a,b){
+  const key=a.join()+"|"+b.join();
+  if(key in legCache) return legCache[key];
+  if(clear(a,b)) return legCache[key]=[];
+  const p=bfs(a,b);
+  return legCache[key]= p ? smooth(a,simplify(a,p,b),b) : [];
+}
+const CATS=[
+ {id:"all",label:"Все"},
+ {id:"match",label:"Близко к 11 ноября"},
+ {id:"west",label:"Западное Средиземноморье"},
+ {id:"east",label:"Греция, Турция, Адриатика"},
+ {id:"atl",label:"С выходом в Атлантику"}
+];
+const MATCH="Ваши даты";
+const S="~день в море";
+
+const CRUISES=[
+/* ===== ближе всего к 11 ноября, 4–7 ночей ===== */
+{id:"co-sm-0911",cat:"west",match:1,line:"Costa Cruises",name:"Costa Smeralda: Испания, Италия, Франция",n:5,nl:"5 ночей",d:"2026-11-09",from:"9 ноя",to:"14 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Барселона","Чивитавеккья","Савона","Марсель","Барселона"],
+ price:"€878",cabin:"внутренняя каюта",note:"Налоги и портовые сборы включены. Сервисный сбор €55 с человека платится на борту",status:"ok",
+ url:"https://www.costacruises.eu/cruises/BCN05A24/SM05261109.html"},
+
+{id:"msc-we-1112",cat:"west",match:1,line:"MSC Cruises",name:"MSC World Europa: Барселона – Марсель",n:5,nl:"5 ночей",d:"2026-11-12",from:"12 ноя",to:"17 ноя",tags:[MATCH],
+ route:["Барселона","Марсель","Генуя","Чивитавеккья","Ла-Специя","Марсель"],
+ price:"€998",cabin:"внутренняя каюта",note:"Тариф €738 плюс портовые сборы €260. Прилёт в Барселону, вылет из Марселя",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=EU20261112BCNMRS&noofAdults=2&noofMinors=0"},
+
+{id:"msc-sv-0909",cat:"west",match:1,line:"MSC Cruises",name:"MSC Seaview: Палермо – Генуя",n:5,nl:"5 ночей",d:"2026-11-09",from:"9 ноя",to:"14 ноя",tags:[MATCH],
+ route:["Палермо",S,"Ибица","Таррагона","Марсель","Генуя"],
+ price:"€1 058",cabin:"каюта с окном",note:"Тариф €798 плюс сборы €260. Внутренние каюты распроданы",status:"few",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=SV20261109PMOGOA&noofAdults=2&noofMinors=0"},
+
+{id:"msc-sp-0909",cat:"west",match:1,line:"MSC Cruises",name:"MSC Splendida: Марсель – Барселона",n:6,nl:"6 ночей",d:"2026-11-09",from:"9 ноя",to:"15 ноя",tags:[MATCH],
+ route:["Марсель","Ливорно","Кальяри","Палермо","Ла-Валлетта",S,"Барселона"],
+ price:"€1 102",cabin:"внутренняя каюта",note:"Тариф €802 плюс сборы €300",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=SP20261109MRSBCN&noofAdults=2&noofMinors=0"},
+
+{id:"msc-we-0909",cat:"west",match:1,line:"MSC Cruises",name:"MSC World Europa: Рим – Генуя",n:5,nl:"5 ночей",d:"2026-11-09",from:"9 ноя",to:"14 ноя",tags:[MATCH],
+ route:["Чивитавеккья","Мессина",S,"Барселона","Марсель","Генуя"],
+ price:"€1 258",cabin:"внутренняя каюта",note:"Тариф €998 плюс сборы €260",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=EU20261109CVVGOA&noofAdults=2&noofMinors=0"},
+
+{id:"msc-we-1113",cat:"west",match:1,line:"MSC Cruises",name:"MSC World Europa: кольцевой из Марселя",n:4,nl:"4 ночи",d:"2026-11-13",from:"13 ноя",to:"17 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Марсель","Генуя","Чивитавеккья","Ла-Специя","Марсель"],
+ price:"€1 534",cabin:"внутренняя каюта",note:"Тариф €1 174 плюс сборы €360",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=EU20261113MRSMRS&noofAdults=2&noofMinors=0"},
+
+{id:"msc-fa-1113",cat:"east",match:1,line:"MSC Cruises",name:"MSC Fantasia: Стамбул – Триест",n:4,nl:"4 ночи",d:"2026-11-13",from:"13 ноя",to:"17 ноя",tags:[MATCH],
+ route:["Стамбул",S,"Корфу","Бари","Триест"],
+ price:"€1 394",cabin:"каюта с балконом",note:"Тариф €1 194 плюс сборы €200",status:"few",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=FA20261113ISTTRS&noofAdults=2&noofMinors=0"},
+
+{id:"msc-we-1112r",cat:"west",match:1,line:"MSC Cruises",name:"MSC World Europa: кольцевой из Барселоны",n:6,nl:"6 ночей",d:"2026-11-12",from:"12 ноя",to:"18 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Барселона","Марсель","Генуя","Чивитавеккья","Ла-Специя","Марсель","Барселона"],
+ price:"€1 902",cabin:"внутренняя каюта",note:"Тариф €1 542 плюс сборы €360",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=EU20261112BCNBCN&noofAdults=2&noofMinors=0"},
+
+{id:"msc-we-0909r",cat:"west",match:1,line:"MSC Cruises",name:"MSC World Europa: кольцевой из Рима",n:6,nl:"6 ночей",d:"2026-11-09",from:"9 ноя",to:"15 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Чивитавеккья","Мессина",S,"Барселона","Марсель","Генуя","Чивитавеккья"],
+ price:"€1 942",cabin:"внутренняя каюта",note:"Тариф €1 582 плюс сборы €360",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=EU20261109CVVCVV&noofAdults=2&noofMinors=0"},
+
+{id:"msc-fa-1111",cat:"east",match:1,line:"MSC Cruises",name:"MSC Fantasia: Афины – Триест через Стамбул",n:6,nl:"6 ночей",d:"2026-11-11",from:"11 ноя",to:"17 ноя",tags:[MATCH,"Ровно 11 ноября"],
+ route:["Пирей","Кушадасы","Стамбул",S,"Корфу","Бари","Триест"],
+ price:"€2 022",cabin:"каюта с балконом",note:"Единственный рейс ровно 11 ноября. Тариф €1 722 плюс сборы €300. Внутренние каюты распроданы",status:"few",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=FA20261111PIRTRS&noofAdults=2&noofMinors=0"},
+
+{id:"co-sm-0909",cat:"west",match:1,line:"Costa Cruises",name:"Costa Smeralda: Барселона – Савона",n:3,nl:"3 ночи",d:"2026-11-09",from:"9 ноя",to:"12 ноя",tags:[MATCH],
+ route:["Барселона","Чивитавеккья","Савона"],
+ price:"€738",cabin:"внутренняя каюта",note:"Налоги включены, сервисный сбор €33 с человека на борту",status:"ok",
+ url:"https://www.costacruises.eu/cruises/BCN03A3I/SM03261109.html"},
+
+{id:"co-pa-1110",cat:"west",match:1,line:"Costa Cruises",name:"Costa Pacifica: кольцевой из Барселоны",n:7,nl:"7 ночей",d:"2026-11-10",from:"10 ноя",to:"17 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Барселона","~Балеарское море","Кальяри","Палермо","Чивитавеккья","Савона","Марсель","Барселона"],
+ price:"€838",cabin:"внутренняя каюта",note:"Налоги включены, сервисный сбор €77 с человека на борту",status:"ok",
+ url:"https://www.costacruises.eu/cruises/BCN07A9P/PA07261110.html"},
+
+{id:"msc-sx-1110",cat:"west",match:1,line:"MSC Cruises",name:"MSC Sinfonia: кольцевой из Генуи",n:7,nl:"7 ночей",d:"2026-11-10",from:"10 ноя",to:"17 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Генуя","Ливорно","Чивитавеккья",S,"Валенсия","Барселона","Марсель","Генуя"],
+ price:"€1 286",cabin:"внутренняя каюта",note:"Тариф €926 плюс сборы €360",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=SX20261110GOAGOA&noofAdults=2&noofMinors=0"},
+
+{id:"co-to-1113",cat:"west",match:1,line:"Costa Cruises",name:"Costa Toscana: кольцевой из Генуи",n:7,nl:"7 ночей",d:"2026-11-13",from:"13 ноя",to:"20 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Генуя","Марсель","Барселона","~Балеарское море","Пальма-де-Майорка","Неаполь","Чивитавеккья","Генуя"],
+ price:"€998",cabin:"внутренняя каюта",note:"Налоги включены, сервисный сбор платится на борту",status:"ok",
+ url:"https://www.costacruises.eu/cruises/GOA07A3S/TO07261113.html"},
+
+{id:"msc-ma-1113",cat:"west",match:1,line:"MSC Cruises",name:"MSC Magnifica: кольцевой из Барселоны",n:7,nl:"7 ночей",d:"2026-11-13",from:"13 ноя",to:"20 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Барселона","Марсель","Генуя","Неаполь","Мессина","Ла-Валлетта",S,"Барселона"],
+ price:"€1 426",cabin:"внутренняя каюта",note:"Тариф €1 066 плюс сборы €360",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=MA20261113BCNBCN&noofAdults=2&noofMinors=0"},
+
+{id:"co-pa-0909",cat:"west",match:1,line:"Costa Cruises",name:"Costa Pacifica: кольцевой из Марселя",n:7,nl:"7 ночей",d:"2026-11-09",from:"9 ноя",to:"16 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Марсель","Барселона","~Балеарское море","Кальяри","Палермо","Чивитавеккья","Савона","Марсель"],
+ price:"€1 298",cabin:"внутренняя каюта",note:"Налоги включены",status:"ok",
+ url:"https://www.costacruises.eu/cruises/MRS07ABQ/PA07261109.html"},
+
+{id:"co-to-1112",cat:"west",match:1,line:"Costa Cruises",name:"Costa Toscana: кольцевой из Рима",n:7,nl:"7 ночей",d:"2026-11-12",from:"12 ноя",to:"19 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Чивитавеккья","Генуя","Марсель","Барселона","~Балеарское море","Пальма-де-Майорка","Неаполь","Чивитавеккья"],
+ price:"€1 318",cabin:"внутренняя каюта",note:"Налоги включены",status:"ok",
+ url:"https://www.costacruises.eu/cruises/CIV07ACX/TO07261112.html"},
+
+{id:"co-to-0909",cat:"west",match:1,line:"Costa Cruises",name:"Costa Toscana: кольцевой из Пальмы",n:7,nl:"7 ночей",d:"2026-11-09",from:"9 ноя",to:"16 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Пальма-де-Майорка","Неаполь","Чивитавеккья","Генуя","Марсель","Барселона","~Балеарское море","Пальма-де-Майорка"],
+ price:"€1 438",cabin:"внутренняя каюта",note:"Налоги включены",status:"ok",
+ url:"https://www.costacruises.eu/cruises/PMI07A5Y/TO07261109.html"},
+
+{id:"msc-sx-0909",cat:"west",match:1,line:"MSC Cruises",name:"MSC Sinfonia: кольцевой из Марселя",n:7,nl:"7 ночей",d:"2026-11-09",from:"9 ноя",to:"16 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Марсель","Генуя","Ливорно","Чивитавеккья",S,"Валенсия","Барселона","Марсель"],
+ price:"€1 586",cabin:"внутренняя каюта",note:"Тариф €1 226 плюс сборы €360",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=SX20261109MRSMRS&noofAdults=2&noofMinors=0"},
+
+{id:"msc-ma-0909",cat:"west",match:1,line:"MSC Cruises",name:"MSC Magnifica: кольцевой из Неаполя",n:7,nl:"7 ночей",d:"2026-11-09",from:"9 ноя",to:"16 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Неаполь","Мессина","Ла-Валлетта",S,"Барселона","Марсель","Генуя","Неаполь"],
+ price:"€1 826",cabin:"внутренняя каюта",note:"Тариф €1 466 плюс сборы €360",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=MA20261109NAPNAP&noofAdults=2&noofMinors=0"},
+
+{id:"co-sm-1113",cat:"atl",match:1,line:"Costa Cruises",name:"Costa Smeralda: Марсель – Канары",n:6,nl:"6 ночей",d:"2026-11-13",from:"13 ноя",to:"19 ноя",tags:[MATCH,"Выход в океан"],
+ route:["Марсель","Барселона","Малага","Кадис","Лас-Пальмас"],
+ price:"€518",cabin:"внутренняя каюта",note:"Самый дешёвый рейс в окне. Заканчивается на Канарах, обратный билет из Лас-Пальмаса",status:"ok",
+ url:"https://www.costacruises.eu/cruises/MRS06A3P/SM06261113.html"},
+
+{id:"co-sm-1112",cat:"atl",match:1,line:"Costa Cruises",name:"Costa Smeralda: Савона – Канары",n:7,nl:"7 ночей",d:"2026-11-12",from:"12 ноя",to:"19 ноя",tags:[MATCH,"Выход в океан"],
+ route:["Савона","Марсель","Барселона","Малага","Кадис","Лас-Пальмас"],
+ price:"€838",cabin:"внутренняя каюта",note:"Заканчивается на Канарах",status:"ok",
+ url:"https://www.costacruises.eu/cruises/SVN07ABA/SM07261112.html"},
+
+{id:"co-sm-1111",cat:"atl",match:1,line:"Costa Cruises",name:"Costa Smeralda: Рим – Канары",n:8,nl:"8 ночей",d:"2026-11-11",from:"11 ноя",to:"19 ноя",tags:[MATCH,"Ровно 11 ноября"],
+ route:["Чивитавеккья","Савона","Марсель","Барселона","Малага","Кадис","Лас-Пальмас"],
+ price:"€1 318",cabin:"внутренняя каюта",note:"Единственный рейс Costa ровно 11 ноября",status:"ok",
+ url:"https://www.costacruises.eu/cruises/CIV08A10/SM08261111.html"},
+
+/* ===== другие рейсы, конец октября и ноябрь ===== */
+{id:"co-fs-1101",cat:"west",line:"Costa Cruises",name:"Costa Fascinosa: кольцевой из Савоны",n:4,nl:"4 ночи",d:"2026-11-01",from:"1 ноя",to:"5 ноя",tags:["Кольцевой"],
+ route:["Савона","Барселона","Марсель","Савона"],
+ price:"€558",cabin:"внутренняя каюта",note:"Самый дешёвый короткий рейс в окне",status:"ok",
+ url:"https://www.costacruises.eu/cruises/SVN04A1V/FS04261101.html"},
+
+{id:"co-fs-1031",cat:"west",line:"Costa Cruises",name:"Costa Fascinosa: кольцевой из Марселя",n:4,nl:"4 ночи",d:"2026-10-31",from:"31 окт",to:"4 ноя",tags:["Кольцевой"],
+ route:["Марсель","Савона","Барселона","Марсель"],
+ price:"€598",cabin:"внутренняя каюта",note:"Налоги включены",status:"ok",
+ url:"https://www.costacruises.eu/cruises/MRS04A2R/FS04261031.html"},
+
+{id:"co-di-1029",cat:"west",line:"Costa Cruises",name:"Costa Diadema: кольцевой из Савоны",n:4,nl:"4 ночи",d:"2026-10-29",from:"29 окт",to:"2 ноя",tags:["Кольцевой"],
+ route:["Савона","Барселона","Марсель","Савона"],
+ price:"€658",cabin:"внутренняя каюта",note:"Налоги включены",status:"ok",
+ url:"https://www.costacruises.eu/cruises/SVN04A33/DI04261029.html"},
+
+{id:"co-sm-1107",cat:"west",line:"Costa Cruises",name:"Costa Smeralda: кольцевой из Савоны",n:5,nl:"5 ночей",d:"2026-11-07",from:"7 ноя",to:"12 ноя",tags:["Кольцевой"],
+ route:["Савона","Марсель","Барселона","Чивитавеккья","Савона"],
+ price:"€618",cabin:"внутренняя каюта",note:"Отправление за 4 дня до ваших дат",status:"ok",
+ url:"https://www.costacruises.eu/cruises/SVN05A3H/SM05261107.html"},
+
+{id:"co-sm-1106",cat:"west",line:"Costa Cruises",name:"Costa Smeralda: кольцевой из Рима",n:5,nl:"5 ночей",d:"2026-11-06",from:"6 ноя",to:"11 ноя",tags:["Кольцевой"],
+ route:["Чивитавеккья","Савона","Марсель","Барселона","Чивитавеккья"],
+ price:"€798",cabin:"внутренняя каюта",note:"Возвращается 11 ноября",status:"ok",
+ url:"https://www.costacruises.eu/cruises/CIV05A19/SM05261106.html"},
+
+{id:"co-pa-1123",cat:"west",line:"Costa Cruises",name:"Costa Pacifica: Марсель – Савона",n:4,nl:"4 ночи",d:"2026-11-23",from:"23 ноя",to:"27 ноя",tags:[],
+ route:["Марсель","Барселона","Чивитавеккья","Савона"],
+ price:"€578",cabin:"внутренняя каюта",note:"Налоги включены",status:"ok",
+ url:"https://www.costacruises.eu/cruises/MRS04A3M/PA04261123.html"},
+
+{id:"co-to-1122",cat:"west",line:"Costa Cruises",name:"Costa Toscana: Барселона – Палермо",n:5,nl:"5 ночей",d:"2026-11-22",from:"22 ноя",to:"27 ноя",tags:[],
+ route:["Барселона","~Балеарское море","Пальма-де-Майорка","Аликанте","Палермо"],
+ price:"€598",cabin:"внутренняя каюта",note:"Налоги включены",status:"ok",
+ url:"https://www.costacruises.eu/cruises/BCN05A3R/TO05261122.html"},
+
+{id:"co-pa-1121",cat:"west",line:"Costa Cruises",name:"Costa Pacifica: кольцевой из Рима",n:5,nl:"5 ночей",d:"2026-11-21",from:"21 ноя",to:"26 ноя",tags:["Кольцевой"],
+ route:["Чивитавеккья","Савона","Марсель","Барселона","Чивитавеккья"],
+ price:"€758",cabin:"внутренняя каюта",note:"Налоги включены",status:"ok",
+ url:"https://www.costacruises.eu/cruises/CIV05A0Y/PA05261121.html"},
+
+{id:"msc-sx-1024",cat:"east",line:"MSC Cruises",name:"MSC Sinfonia: Бари – Рим через Грецию",n:5,nl:"5 ночей",d:"2026-10-24",from:"24 окт",to:"29 окт",tags:[],
+ route:["Бари",S,"Пирей","Катаколон",S,"Чивитавеккья"],
+ price:"€1 018",cabin:"внутренняя каюта",note:"Тариф €758 плюс сборы €260",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=SX20261024BRICVV&noofAdults=2&noofMinors=0"},
+
+{id:"msc-ma-1029",cat:"west",line:"MSC Cruises",name:"MSC Magnifica: кольцевой из Генуи",n:5,nl:"5 ночей",d:"2026-10-29",from:"29 окт",to:"3 ноя",tags:["Кольцевой"],
+ route:["Генуя","Марсель","Таррагона",S,"Чивитавеккья","Генуя"],
+ price:"€1 118",cabin:"внутренняя каюта",note:"Тариф €858 плюс сборы €260",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=MA20261029GOAGOA&noofAdults=2&noofMinors=0"},
+
+{id:"msc-er-1020",cat:"west",line:"MSC Cruises",name:"MSC Euribia: кольцевой из Барселоны",n:4,nl:"4 ночи",d:"2026-10-20",from:"20 окт",to:"24 окт",tags:["Кольцевой"],
+ route:["Барселона","Марсель","Генуя",S,"Барселона"],
+ price:"€1 134",cabin:"внутренняя каюта",note:"Тариф €934 плюс сборы €200",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=ER20261020BCNBCN&noofAdults=2&noofMinors=0"},
+
+{id:"msc-ma-1108",cat:"west",line:"MSC Cruises",name:"MSC Magnifica: Генуя – Барселона",n:5,nl:"5 ночей",d:"2026-11-08",from:"8 ноя",to:"13 ноя",tags:[],
+ route:["Генуя","Неаполь","Мессина","Ла-Валлетта",S,"Барселона"],
+ price:"€978",cabin:"внутренняя каюта",note:"Тариф €718 плюс сборы €260. Отправление за 3 дня до ваших дат",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=MA20261108GOABCN&noofAdults=2&noofMinors=0"},
+
+{id:"msc-sv-1108",cat:"west",line:"MSC Cruises",name:"MSC Seaview: Рим – Генуя",n:6,nl:"6 ночей",d:"2026-11-08",from:"8 ноя",to:"14 ноя",tags:[],
+ route:["Чивитавеккья","Палермо",S,"Ибица","Таррагона","Марсель","Генуя"],
+ price:"€1 062",cabin:"внутренняя каюта",note:"Тариф €762 плюс сборы €300",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=SV20261108CVVGOA&noofAdults=2&noofMinors=0"},
+
+{id:"msc-ma-1130",cat:"west",line:"MSC Cruises",name:"MSC Magnifica: Неаполь – Генуя",n:6,nl:"6 ночей",d:"2026-11-30",from:"30 ноя",to:"6 дек",tags:[],
+ route:["Неаполь","Мессина","Ла-Валлетта",S,"Барселона","Марсель","Генуя"],
+ price:"€1 042",cabin:"внутренняя каюта",note:"Тариф €742 плюс сборы €300",status:"ok",
+ url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=MA20261130NAPGOA&noofAdults=2&noofMinors=0"}
+];
+
+const PICKS=["co-sm-0911","msc-we-1112","co-sm-1113"];
+/* ---------- отрисовка схемы маршрута ---------- */
+const MW=320, MH=216, PADX=40, PADY=22;
+const mapCache={};
+const shortName = n=>n.replace(/^Санта-Крус-де-/,"").replace(/^Пуэрто-дель-/,"");
+
+function resolve(route){
+  const out=[];
+  for(const raw of route){
+    const scenic = raw[0]==="~";
+    const nm = raw.replace(/^~/,"").replace(/\s*\(.*\)$/,"").trim();
+    if(!G[nm]) continue;
+    if(out.length && out[out.length-1].name===nm) continue;
+    out.push({name:nm,p:G[nm],scenic});
+  }
+  return out;
+}
+
+function mapSvg(c){
+  if(c.id in mapCache) return mapCache[c.id];
+  const stops = resolve(c.route);
+  if(stops.length<2) return mapCache[c.id]="";
+  const uniq=[];
+  stops.forEach(s=>{ if(!uniq.some(u=>u.name===s.name)) uniq.push(s); });
+
+  const path=[];
+  stops.forEach((s,i)=>{ if(i) path.push(...leg(stops[i-1].p,s.p)); path.push(s.p); });
+
+  const xs=path.map(p=>p[0]), ys=path.map(p=>p[1]);
+  const x0=Math.min(...xs), x1=Math.max(...xs), y0=Math.min(...ys), y1=Math.max(...ys);
+  const cx=(x0+x1)/2, cy=(y0+y1)/2, k=Math.cos(cy*Math.PI/180);
+  const sc=Math.min((MW-2*PADX)/Math.max((x1-x0)*k,2.2), (MH-2*PADY)/Math.max(y1-y0,1.8));
+  const P=p=>[MW/2+(p[0]-cx)*k*sc, MH/2-(p[1]-cy)*sc];
+  const f=v=>v.toFixed(1);
+  const d=pts=>pts.map((p,i)=>{const q=P(p);return (i?"L":"M")+f(q[0])+" "+f(q[1]);}).join("");
+
+  // сетка меридианов и параллелей
+  const step = sc>26?1:sc>11?2:sc>5?5:10;
+  const halfLon=MW/2/(k*sc), halfLat=MH/2/sc;
+  let grd="";
+  for(let g=Math.ceil((cx-halfLon)/step)*step; g<=cx+halfLon; g+=step){ const x=f(P([g,cy])[0]); grd+=`<line class="m-grid" x1="${x}" y1="0" x2="${x}" y2="${MH}"/>`; }
+  for(let g=Math.ceil((cy-halfLat)/step)*step; g<=cy+halfLat; g+=step){ const y=f(P([cx,g])[1]); grd+=`<line class="m-grid" x1="0" y1="${y}" x2="${MW}" y2="${y}"/>`; }
+
+  // суша = прямоугольник минус море плюс острова (правило evenodd)
+  const land = `<path class="m-land" fill-rule="evenodd" d="M-600 -600L920 -600L920 820L-600 820Z${d(WATER)}Z${ISLANDS.map(i=>d(i)+"Z").join("")}"/>`;
+
+  const first=stops[0].name, last=stops[stops.length-1].name;
+  const dots = uniq.map(s=>({s,q:P(s.p)}));
+  const boxes = dots.map(o=>[o.q[0]-5,o.q[1]-5,o.q[0]+5,o.q[1]+5]);
+  const hit=(a,b)=>a[0]<b[2]&&a[2]>b[0]&&a[1]<b[3]&&a[3]>b[1];
+  let labels="";
+  dots.forEach(o=>{
+    const t=shortName(o.s.name), w=t.length*5.4+2, h=11, [x,y]=o.q;
+    const cands=[[x+7,y-h/2,"start",x+7],[x-7-w,y-h/2,"end",x-7],[x-w/2,y-7-h,"middle",x],[x-w/2,y+7,"middle",x],
+                 [x+7,y-h-2,"start",x+7],[x-7-w,y+3,"end",x-7]];
+    for(const cnd of cands){
+      const b=[cnd[0],cnd[1],cnd[0]+w,cnd[1]+h];
+      if(b[0]<2||b[2]>MW-2||b[1]<2||b[3]>MH-2) continue;
+      if(boxes.some(bb=>hit(b,bb))) continue;
+      boxes.push(b);
+      labels+=`<text class="m-label" x="${f(cnd[3])}" y="${f(cnd[1]+h-2.5)}" text-anchor="${cnd[2]}">${t}</text>`;
+      break;
+    }
+  });
+  const circles = dots.map(o=>{
+    const cls = o.s.name===first?"start":o.s.name===last?"end":o.s.scenic?"scenic":"";
+    return `<circle class="m-dot ${cls}" cx="${f(o.q[0])}" cy="${f(o.q[1])}" r="${cls==="start"||cls==="end"?4.6:3.6}"/>`;
+  }).join("");
+
+  const alt = "Схема маршрута: "+uniq.map(s=>s.name).join(" → ");
+  return mapCache[c.id]=`<svg viewBox="0 0 ${MW} ${MH}" role="img" aria-label="${alt}">${grd}${land}<path class="m-route" d="${d(path)}"/>${circles}${labels}</svg>`;
+}
+
+/* ---------- список и фильтры ---------- */
+const STATUS={ok:"Есть места",few:"Мало мест",wait:"Лист ожидания",sold:"Распродано"};
+const state={cat:"all",free:false,sort:"pick"};
+const $=id=>document.getElementById(id);
+const host=u=>new URL(u).hostname.replace(/^www\./,"");
+
+function renderPicks(){
+  const el=$("picks"); if(!el) return;
+  el.innerHTML = PICKS.map(id=>{
+    const c=CRUISES.find(x=>x.id===id); if(!c) return "";
+    return `<a class="pick" href="${c.url}" target="_blank" rel="noopener">
+      <span class="pick-price">${c.price}</span>
+      <span class="pick-name">${c.line}</span>
+      <span class="pick-meta">${c.from} – ${c.to} · ${c.nl} · ${c.cabin}</span>
+      <span class="pick-go">Открыть на ${host(c.url)} ↗</span></a>`;
+  }).join("");
+}
+function renderChips(){
+  $("chips").innerHTML = CATS.map(k=>{
+    const n = k.id==="all" ? CRUISES.length
+            : k.id==="match" ? CRUISES.filter(c=>c.match).length
+            : CRUISES.filter(c=>c.cat===k.id).length;
+    return `<button type="button" class="chip" data-cat="${k.id}" aria-pressed="${state.cat===k.id}">${k.label}<span class="n">${n}</span></button>`;
+  }).join("");
+}
+function renderList(){
+  let rows = CRUISES.filter(c =>
+    (state.cat==="all" || c.cat===state.cat || (state.cat==="match" && c.match)) &&
+    (!state.free || c.status==="ok" || c.status==="few"));
+  if(state.sort==="date") rows=[...rows].sort((a,b)=>a.d.localeCompare(b.d)||a.n-b.n);
+  if(state.sort==="short") rows=[...rows].sort((a,b)=>a.n-b.n||a.d.localeCompare(b.d));
+  $("count").textContent = "Показано: "+rows.length+" из "+CRUISES.length;
+  if(!rows.length){ $("list").innerHTML=`<div class="empty">Под эти условия ничего не подходит — снимите один из фильтров.</div>`; return; }
+  $("list").innerHTML = rows.map(c=>{ const m=mapSvg(c); return `
+    <article class="cruise${c.status==="sold"?" is-sold":""}${c.match?" is-match":""}${m?"":" no-map"}">
+      <div class="when">
+        <span class="d">${c.from}</span>
+        <span class="to">по ${c.to}</span>
+        <span class="n">${c.nl}</span>
+      </div>
+      <div class="main">
+        <span class="line">${c.line}</span>
+        <h3 class="name">${c.name}</h3>
+        ${c.tags.length?`<div class="tags">${c.tags.map(t=>`<span class="tag${t==="Ваши даты"?" match":""}">${t}</span>`).join("")}</div>`:""}
+        <ol class="route">${c.route.map(p=>p[0]==="~"?`<li class="scenic">${p.slice(1)}</li>`:`<li>${p}</li>`).join("")}</ol>
+      </div>
+      ${m?`<div class="mapbox">${m}</div>`:""}
+      <div class="pay">
+        <span class="pill ${c.status}">${STATUS[c.status]}</span>
+        <span class="price">${c.price}<small>${c.status==="sold"?c.cabin:"на двоих · "+c.cabin}</small></span>
+        ${c.note?`<span class="pnote">${c.note}</span>`:""}
+        <a class="btn" href="${c.url}" target="_blank" rel="noopener" title="${host(c.url)}">Открыть на сайте ↗</a>
+        <span class="pnote">${host(c.url)}</span>
+      </div>
+    </article>`; }).join("");
+}
+$("chips").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b) return;
+  state.cat=b.dataset.cat; renderChips(); renderList();
+});
+$("only-free").addEventListener("change",e=>{ state.free=e.target.checked; renderList(); });
+$("sort").addEventListener("change",e=>{ state.sort=e.target.value; renderList(); });
+function plural(n,a,b,c){const m=n%100,k=n%10;return n+" "+(m>=11&&m<=14?c:k===1?a:k>=2&&k<=4?b:c);}
+function renderIntro(){
+  const lines=new Set(CRUISES.map(c=>c.line)).size;
+  const m=CRUISES.filter(c=>c.match);
+  const exact=CRUISES.filter(c=>c.tags.includes("Ровно 11 ноября"));
+  $("lede").textContent = plural(CRUISES.length,"рейс","рейса","рейсов")+
+    " от "+lines+" круизных компаний, у каждого — схема маршрута. Цена везде за двоих в одной каюте, самой дешёвой из тех, что ещё продаются. Все данные и ссылки только с официальных сайтов компаний, по состоянию на 22 сентября 2026.";
+  $("target-text").textContent =
+    "Ровно 11 ноября на 5 ночей не уходит ни один круиз. "+
+    plural(exact.length,"рейс отправляется","рейса отправляются","рейсов отправляются")+
+    " именно 11 ноября, но другой длительности. Всего "+
+    plural(m.length,"вариант подходит","варианта подходят","вариантов подходят")+
+    " под окно 9–13 ноября — они отмечены рамкой и меткой «Ваши даты».";
+}
+renderIntro(); renderPicks(); renderChips(); renderList();
+</script>
+</body></html>
