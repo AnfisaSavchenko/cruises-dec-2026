@@ -219,10 +219,14 @@ h2{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.15;ma
     <dl>
       <dt>Ровно 11 ноября</dt>
       <dd>Пятидневных круизов в этот день нет ни у одной компании. Ближайшие по смыслу варианты — отправление 9, 10, 12 или 13 ноября; они отмечены меткой «Ваши даты».</dd>
+      <dt>Почему выбор в ноябре узкий</dt>
+      <dd>У крупных американских линий средиземноморский сезон заканчивается в последних числах октября: последние рейсы Royal Caribbean — 26 октября, NCL — 25 октября, Celebrity — 23 октября, Virgin — 11 октября, дальше весь флот уходит через Атлантику в Карибское море. В ноябре короткие средиземноморские маршруты остаются только у MSC и Costa. Единственный подходящий рейс Princess на 10 ноября распродан полностью.</dd>
       <dt>Что входит в цену</dt>
       <dd>У Costa налоги и портовые сборы уже включены, но сервисный сбор около €11 с человека за ночь платится на борту. У MSC в таблице показана сумма тарифа и портовых сборов — возможно, на сайте сборы уже включены в цену, тогда итог будет ниже; сервисный сбор около €12 с человека за ночь платится отдельно.</dd>
-      <dt>Валюта</dt>
-      <dd>Все цены в евро с европейских версий сайтов. Британская и итальянская версии MSC из этой сети не открылись, а цены там могут отличаться.</dd>
+      <dt>Целиком не проверено</dt>
+      <dd>Сайт AIDA (немецкая линия с зимними рейсами из Пальмы) блокирует любые автоматические запросы, поэтому её рейсов здесь нет. По Marella и P&amp;O данные получить не удалось; обе обычно уводят флот из Средиземного моря на ноябрь, но это ожидание, а не проверенный факт.</dd>
+      <dt>Валюты разные</dt>
+      <dd>€ — с европейских версий сайтов MSC, Costa и NCL. £ — с британских версий Royal Caribbean и Celebrity. $ — с сайта Princess. Сайты показывают валюту по стране посетителя, поэтому у вас на экране может оказаться другая. Пересчёта между валютами здесь нет.</dd>
       <dt>Перелёты</dt>
       <dd>Ни в одну цену не входят. У маршрутов «из порта А в порт Б» прилетать и улетать придётся из разных городов — это обычно дороже, чем кольцевой рейс.</dd>
       <dt>Цены меняются</dt>
@@ -356,7 +360,8 @@ const G = {
 "Лимасол":[33.05,34.65],"Хайфа":[34.99,32.82],"Ашдод":[34.64,31.80],"Александрия":[29.92,31.20],
 "Порт-Саид":[32.30,31.26],"Тунис":[10.30,36.82],"Ла-Гулет":[10.30,36.82],"Бизерта":[9.87,37.28],
 "Фуншал":[-16.91,32.65],"Лас-Пальмас":[-15.43,28.13],"Тенерифе":[-16.25,28.47],"Арресифе":[-13.55,28.96],
-"Пуэрто-дель-Росарио":[-13.86,28.50],"Санта-Крус-де-ла-Пальма":[-17.76,28.68],"Аррецифе":[-13.55,28.96]
+"Пуэрто-дель-Росарио":[-13.86,28.50],"Санта-Крус-де-ла-Пальма":[-17.76,28.68],
+"Мотриль":[-3.52,36.72],"Портимау":[-8.53,37.13],"Кавала":[24.41,40.94],"Лаврион":[24.06,37.71]
 };
 
 /* ---------- определение «это море?» ---------- */
@@ -495,6 +500,73 @@ const MATCH="Ваши даты";
 const S="~день в море";
 
 const CRUISES=[
+/* ===== Celestyal: короткие греческие рейсы, единственные в окне ===== */
+{id:"cel-1109",cat:"east",match:1,line:"Celestyal",name:"Celestyal Discovery: греческие острова за 5 дней",n:4,nl:"4 ночи",d:"2026-11-09",from:"9 ноя",to:"13 ноя",tags:[MATCH,"Кольцевой","Лучшее совпадение"],
+ route:["Лаврион","Миконос","Кушадасы","Патмос","Родос","Санторини","Лаврион"],
+ price:"€1 298",cabin:"внутренняя или каюта с окном — цена одна",note:"Всё включено: портовые сборы €169 с человека и чаевые. Каюта с балконом только в листе ожидания. Порт Лаврион — второй порт Афин, около 40 минут от аэропорта",status:"ok",
+ url:"https://booking.celestyal.com/touchb2c/?inJsonGet=%7B%22dateFrom%22%3A%222026-11-09%22%2C%22dateTo%22%3A%222026-11-09%22%2C%22destination%22%3A%224DICONICWINTER%22%2C%22locale%22%3A%22en%22%2C%22residency%22%3A%22GB%22%2C%22caller%22%3A%22RUN-SEARCH%22%7D"},
+
+{id:"cel-1110",cat:"east",match:1,line:"Celestyal",name:"Celestyal Discovery: тот же круг, посадка в Кушадасы",n:4,nl:"4 ночи",d:"2026-11-10",from:"10 ноя",to:"14 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Кушадасы","Патмос","Родос","Санторини","Лаврион","Миконос","Кушадасы"],
+ price:"€1 298",cabin:"внутренняя или каюта с окном",note:"Тот же маршрут, начатый с турецкого берега. Порядок портов на сайте отдельно не опубликован. Каюта с балконом €2 538",status:"ok",
+ url:"https://booking.celestyal.com/touchb2c/?inJsonGet=%7B%22dateFrom%22%3A%222026-11-10%22%2C%22dateTo%22%3A%222026-11-10%22%2C%22destination%22%3A%224DICONICWINTER%22%2C%22locale%22%3A%22en%22%2C%22residency%22%3A%22GB%22%2C%22caller%22%3A%22RUN-SEARCH%22%7D"},
+
+{id:"cel-1113",cat:"east",match:1,line:"Celestyal",name:"Celestyal Discovery: греческие острова за 4 дня",n:3,nl:"3 ночи",d:"2026-11-13",from:"13 ноя",to:"16 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Лаврион","Миконос","Кушадасы","Патмос","Санторини","Лаврион"],
+ price:"€1 018",cabin:"внутренняя или каюта с окном",note:"Всё включено, портовые сборы €129 с человека. Без Родоса",status:"ok",
+ url:"https://booking.celestyal.com/touchb2c/?inJsonGet=%7B%22dateFrom%22%3A%222026-11-13%22%2C%22dateTo%22%3A%222026-11-13%22%2C%22destination%22%3A%223DICONICWINTER%22%2C%22locale%22%3A%22en%22%2C%22residency%22%3A%22GB%22%2C%22caller%22%3A%22RUN-SEARCH%22%7D"},
+
+{id:"cel-1116",cat:"east",line:"Celestyal",name:"Celestyal Discovery: греческие острова, 16 ноября",n:4,nl:"4 ночи",d:"2026-11-16",from:"16 ноя",to:"20 ноя",tags:["Кольцевой"],
+ route:["Лаврион","Миконос","Кушадасы","Патмос","Родос","Санторини","Лаврион"],
+ price:"€1 298",cabin:"внутренняя или каюта с окном",note:"Свободны все категории кают",status:"ok",
+ url:"https://celestyal.com/gb/our-cruises/iconic-greek-islands/4-nights-march-november"},
+
+{id:"cel-1123",cat:"east",line:"Celestyal",name:"Celestyal Discovery: последний рейс сезона в Эгейском море",n:4,nl:"4 ночи",d:"2026-11-23",from:"23 ноя",to:"27 ноя",tags:[],
+ route:["Лаврион","Миконос","Кушадасы","Патмос","Родос","Санторини","Пирей"],
+ price:"€1 298",cabin:"внутренняя или каюта с окном",note:"Высадка в Пирее, а не в Лаврионе",status:"ok",
+ url:"https://celestyal.com/gb/our-cruises/iconic-greek-islands/4-nights-march-november"},
+
+{id:"cel-1024",cat:"east",line:"Celestyal",name:"Celestyal Journey: Идиллическая Греция",n:5,nl:"5 ночей",d:"2026-10-24",from:"24 окт",to:"29 окт",tags:["Кольцевой","Самый дешёвый"],
+ route:["Пирей","Пирей"],
+ price:"€958",cabin:"внутренняя каюта",note:"Самая низкая цена во всей подборке. Портовые сборы €189 с человека включены. Список промежуточных портов на сайте не опубликован — уточняйте при бронировании",status:"ok",
+ url:"https://booking.celestyal.com/touchb2c/?inJsonGet=%7B%22dateFrom%22%3A%222026-10-24%22%2C%22dateTo%22%3A%222026-10-24%22%2C%22destination%22%3A%225NIDYLLIC%22%2C%22locale%22%3A%22en%22%2C%22residency%22%3A%22GB%22%2C%22caller%22%3A%22RUN-SEARCH%22%7D"},
+
+{id:"cel-1127",cat:"west",line:"Celestyal",name:"Celestyal Discovery: Афины – Барселона вдоль Ривьеры",n:8,nl:"8 ночей",d:"2026-11-27",from:"27 ноя",to:"5 дек",tags:[],
+ route:["Пирей","Кушадасы",S,"Мессина","Неаполь","Чивитавеккья","Ницца","Таррагона"],
+ price:"€1 858",cabin:"каюта с окном",note:"Внутренние каюты только в листе ожидания. Портовые сборы €329 с человека включены. Ночёвка в Таррагоне",status:"few",
+ url:"https://booking.celestyal.com/touchb2c/?inJsonGet=%7B%22dateFrom%22%3A%222026-11-27%22%2C%22dateTo%22%3A%222026-11-27%22%2C%22destination%22%3A%228NMEDRIVA%22%2C%22locale%22%3A%22en%22%2C%22residency%22%3A%22GB%22%2C%22caller%22%3A%22RUN-SEARCH%22%7D"},
+
+{id:"cel-1128",cat:"west",line:"Celestyal",name:"Celestyal Discovery: Кушадасы – Барселона",n:7,nl:"7 ночей",d:"2026-11-28",from:"28 ноя",to:"5 дек",tags:[],
+ route:["Кушадасы",S,"Мессина","Неаполь","Чивитавеккья","Ницца","Таррагона"],
+ price:"€1 858",cabin:"каюта с окном",note:"Внутренние каюты только в листе ожидания",status:"few",
+ url:"https://booking.celestyal.com/touchb2c/?inJsonGet=%7B%22dateFrom%22%3A%222026-11-28%22%2C%22dateTo%22%3A%222026-11-28%22%2C%22destination%22%3A%227NMEDRIVA%22%2C%22locale%22%3A%22en%22%2C%22residency%22%3A%22GB%22%2C%22caller%22%3A%22RUN-SEARCH%22%7D"},
+
+/* ===== Mein Schiff: кольцевые из Пальмы ===== */
+{id:"ms4-1108",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: западное Средиземноморье",n:7,nl:"7 ночей",d:"2026-11-08",from:"8 ноя",to:"15 ноя",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
+ price:"€1 798",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом из Германии €2 688 на двоих. Чаевые включены. Сайт на немецком",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSV2657SEE"},
+
+{id:"ms4-1122",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: западное Средиземноморье, 22 ноября",n:7,nl:"7 ночей",d:"2026-11-22",from:"22 ноя",to:"29 ноя",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
+ price:"€1 398",cabin:"внутренняя каюта",note:"Самый дешёвый рейс Mein Schiff. Без перелёта; с перелётом €2 238 на двоих",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSV2659SEE"},
+
+{id:"ms4-1115",cat:"atl",line:"Mein Schiff",name:"Mein Schiff 4: юг Испании и Марокко",n:7,nl:"7 ночей",d:"2026-11-15",from:"15 ноя",to:"22 ноя",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Кадис","Танжер","Малага","Валенсия","Пальма-де-Майорка"],
+ price:"€2 398",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом €3 238 на двоих",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-suedspanien-fuer-geniesser-abbis-palma-MSV2658SEE"},
+
+{id:"ms4-1101",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: Испания и Гибралтар",n:7,nl:"7 ночей",d:"2026-11-01",from:"1 ноя",to:"8 ноя",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Малага","Гибралтар","Кадис","Валенсия","Пальма-де-Майорка"],
+ price:"€2 498",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом €3 438 на двоих",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-faszination-mittelmeer-abbis-palma-MSV2656SEE"},
+
+{id:"ms7-1022",cat:"west",line:"Mein Schiff",name:"Mein Schiff 7: западное Средиземноморье",n:7,nl:"7 ночей",d:"2026-10-22",from:"22 окт",to:"29 окт",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
+ price:"€2 058",cabin:"каюта с балконом",note:"Здесь балкон дешевле внутренней каюты. Без перелёта; с перелётом €3 018 на двоих",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSI2639SEE"},
+
 /* ===== ближе всего к 11 ноября, 4–7 ночей ===== */
 {id:"co-sm-0911",cat:"west",match:1,line:"Costa Cruises",name:"Costa Smeralda: Испания, Италия, Франция",n:5,nl:"5 ночей",d:"2026-11-09",from:"9 ноя",to:"14 ноя",tags:[MATCH,"Кольцевой"],
  route:["Барселона","Чивитавеккья","Савона","Марсель","Барселона"],
@@ -611,6 +683,83 @@ const CRUISES=[
  price:"€1 318",cabin:"внутренняя каюта",note:"Единственный рейс Costa ровно 11 ноября",status:"ok",
  url:"https://www.costacruises.eu/cruises/CIV08A10/SM08261111.html"},
 
+{id:"pr-n639",cat:"east",match:1,line:"Princess Cruises",name:"Enchanted Princess: Италия, Греция, Турция",n:7,nl:"7 ночей",d:"2026-11-10",from:"10 ноя",to:"17 ноя",tags:[MATCH,"Кольцевой"],
+ route:["Чивитавеккья","Салерно","Санторини","Кушадасы","Катаколон","Чивитавеккья"],
+ price:"—",cabin:"все каюты проданы",note:"Единственный подходящий рейс у крупных американских линий — и он распродан полностью",status:"sold",
+ url:"https://www.princess.com/itinerary-details?voyageCode=N639"},
+
+/* ===== ноябрь: выход к Канарам и Марокко ===== */
+{id:"ce-in648",cat:"atl",match:1,line:"Celebrity Cruises",name:"Celebrity Infinity: Мадейра, Канары и Марокко",n:12,nl:"12 ночей",d:"2026-11-14",from:"14 ноя",to:"26 ноя",tags:["Кольцевой"],
+ route:["Барселона","Арресифе","Тенерифе","Санта-Крус-де-ла-Пальма","Фуншал","Танжер","Барселона"],
+ price:"£2 324",cabin:"внутренняя каюта",note:"Единственный рейс середины ноября из средиземноморского порта по цене обычной каюты. Налоги включены",status:"ok",
+ url:"https://www.celebritycruises.com/gb/en/itinerary/12-night-madeira-canaries-morocco-from-barcelona-on-celebrity-IN12M648?sailDate=2026-11-14&packageCode=IN12M648"},
+
+{id:"ce-in649",cat:"atl",line:"Celebrity Cruises",name:"Celebrity Infinity: Канары, Испания и Марокко",n:12,nl:"12 ночей",d:"2026-11-26",from:"26 ноя",to:"8 дек",tags:["Кольцевой"],
+ route:["Барселона","Малага","Танжер","Касабланка","Санта-Крус-де-ла-Пальма","Тенерифе","Арресифе","Гибралтар","Барселона"],
+ price:"£13 422",cabin:"остались только сьюты",note:"Обычные каюты распроданы",status:"few",
+ url:"https://www.celebritycruises.com/gb/en/itinerary/12-night-canaries-spain-morocco-from-barcelona-on-celebrity-IN12M649?sailDate=2026-11-26&packageCode=IN12M649"},
+
+/* ===== конец октября: последняя неделя средиземноморского сезона ===== */
+{id:"rc-le3",cat:"west",line:"Royal Caribbean",name:"Legend of the Seas: Рим – Барселона",n:3,nl:"3 ночи",d:"2026-10-22",from:"22 окт",to:"25 окт",tags:["Самый короткий"],
+ route:["Чивитавеккья","Неаполь",S,"Барселона"],
+ price:"£1 278",cabin:"внутренняя каюта",note:"Налоги и сборы включены, чаевые отдельно",status:"ok",
+ url:"https://www.royalcaribbean.com/gbr/en/itinerary/3-night-western-mediterranean-cruise-from-rome-civitavecchia-on-legend-LE3IP110?sailDate=2026-10-22&packageCode=LE3IP110"},
+
+{id:"ncl-epic",cat:"west",line:"Norwegian Cruise Line",name:"Norwegian Epic: Рим – Барселона",n:7,nl:"7 ночей",d:"2026-10-25",from:"25 окт",to:"1 ноя",tags:["Лучшая цена за ночь"],
+ route:["Чивитавеккья","Салерно","Катания","Ливорно","Вильфранш","Марсель","Барселона"],
+ price:"€920",cabin:"внутренняя каюта",note:"Самая низкая цена за ночь во всей подборке. С балконом €1 364. Входят ли налоги, сайт не уточняет",status:"ok",
+ url:"https://www.ncl.com/fr/en/cruises/7-day-mediterranean-from-rome-to-barcelona-florence-and-marseille?itineraryCode=EPIC7CIVSALCTALIVVLFMRSBCN"},
+
+{id:"ncl-pearl",cat:"east",line:"Norwegian Cruise Line",name:"Norwegian Pearl: Афины – Равенна",n:7,nl:"7 ночей",d:"2026-10-25",from:"25 окт",to:"1 ноя",tags:[],
+ route:["Пирей","Санторини","Катаколон","Корфу","Котор","Дубровник","Копер","Равенна"],
+ price:"€1 054",cabin:"внутренняя каюта",note:"С балконом €1 750. Входят ли налоги, сайт не уточняет",status:"ok",
+ url:"https://www.ncl.com/fr/en/cruises/7-day-greek-isles-from-athens-to-venice-ravenna-montenegro-croatia-and-corfu?itineraryCode=PEARL7PIRJTRKAKCFUKOTDBVKOPRAV"},
+
+{id:"ncl-gem",cat:"east",line:"Norwegian Cruise Line",name:"Norwegian Gem: Равенна – Рим",n:7,nl:"7 ночей",d:"2026-10-25",from:"25 окт",to:"1 ноя",tags:[],
+ route:["Равенна","Сплит","Дубровник","Котор","Корфу","Мессина","Салерно","Чивитавеккья"],
+ price:"€1 090",cabin:"внутренняя каюта",note:"Входят ли налоги, сайт не уточняет",status:"ok",
+ url:"https://www.ncl.com/fr/en/cruises/7-day-greek-isles-from-venice-ravenna-to-rome-italy-greece-and-croatia?itineraryCode=GEM7RAVSPUDBVKOTCFUMSNSALCIV"},
+
+{id:"ncl-dawn",cat:"atl",line:"Norwegian Cruise Line",name:"Norwegian Dawn: Барселона – Лиссабон",n:7,nl:"7 ночей",d:"2026-10-25",from:"25 окт",to:"1 ноя",tags:[],
+ route:["Барселона","Пальма-де-Майорка","Аликанте","Мотриль","Гибралтар","Кадис","Портимау","Лиссабон"],
+ price:"€1 298",cabin:"внутренняя каюта",note:"Выходит из Средиземного моря через Гибралтар",status:"ok",
+ url:"https://www.ncl.com/fr/en/cruises/7-day-mediterranean-from-barcelona-to-lisbon-spain-and-portugal?itineraryCode=DAWN7BCNPMIALCMOTGIBCADPRMLIS"},
+
+{id:"rc-ex07",cat:"west",line:"Royal Caribbean",name:"Explorer of the Seas: Равенна – Барселона",n:7,nl:"7 ночей",d:"2026-10-24",from:"24 окт",to:"31 окт",tags:[],
+ route:["Равенна",S,"Мессина","Неаполь","Чивитавеккья","Аяччо","Марсель","Барселона"],
+ price:"£1 579",cabin:"внутренняя каюта",note:"Налоги и сборы включены",status:"ok",
+ url:"https://www.royalcaribbean.com/gbr/en/itinerary/7-night-italy-france-cruise-from-ravenna-on-explorer-EX07M808?sailDate=2026-10-24&packageCode=EX07M808"},
+
+{id:"rc-br07",cat:"west",line:"Royal Caribbean",name:"Brilliance of the Seas: Равенна – Барселона",n:7,nl:"7 ночей",d:"2026-10-26",from:"26 окт",to:"2 ноя",tags:[],
+ route:["Равенна",S,"Салерно","Чивитавеккья","Ла-Специя","Аяччо","Марсель","Барселона"],
+ price:"£1 917",cabin:"внутренняя каюта",note:"Налоги и сборы включены",status:"ok",
+ url:"https://www.royalcaribbean.com/gbr/en/itinerary/7-night-italy-france-cruise-from-ravenna-on-brilliance-BR07M823?sailDate=2026-10-26&packageCode=BR07M823"},
+
+{id:"pr-u642",cat:"east",line:"Princess Cruises",name:"Sun Princess: Афины – Барселона",n:7,nl:"7 ночей",d:"2026-10-24",from:"24 окт",to:"31 окт",tags:[],
+ route:["Пирей","Бар","Корфу","Мессина","Неаполь","Барселона"],
+ price:"$4 476",cabin:"каюта с балконом",note:"Осталась 1 каюта. Внутренние и с окном проданы. Налоги включены",status:"few",
+ url:"https://www.princess.com/itinerary-details?voyageCode=U642"},
+
+{id:"ce-eq382",cat:"west",line:"Celebrity Cruises",name:"Celebrity Equinox: Италия, Испания и Мальта",n:10,nl:"10 ночей",d:"2026-10-20",from:"20 окт",to:"30 окт",tags:["Кольцевой"],
+ route:["Барселона","Пальма-де-Майорка","Ла-Специя","Чивитавеккья","Неаполь","Ла-Валлетта","Палермо","Барселона"],
+ price:"£1 866",cabin:"внутренняя каюта",note:"Налоги и сборы включены",status:"ok",
+ url:"https://www.celebritycruises.com/gb/en/itinerary/10-night-italy-spain-malta-cruise-from-barcelona-on-celebrity-EQ10M382?sailDate=2026-10-20&packageCode=EQ10M382"},
+
+{id:"ce-cs388",cat:"east",line:"Celebrity Cruises",name:"Celebrity Constellation: Италия и Хорватия",n:10,nl:"10 ночей",d:"2026-10-23",from:"23 окт",to:"2 ноя",tags:[],
+ route:["Равенна","Сплит","Дубровник","Котор","Мессина","Сорренто","Портофино","Ла-Специя","Чивитавеккья"],
+ price:"£2 020",cabin:"внутренняя каюта",note:"Налоги и сборы включены",status:"ok",
+ url:"https://www.celebritycruises.com/gb/en/itinerary/10-night-best-of-italy-croatia-cruise-from-ravenna-on-celebrity-CS10M388?sailDate=2026-10-23&packageCode=CS10M388"},
+
+{id:"ce-in393",cat:"east",line:"Celebrity Cruises",name:"Celebrity Infinity: вся Греция",n:10,nl:"10 ночей",d:"2026-10-23",from:"23 окт",to:"2 ноя",tags:["Кольцевой"],
+ route:["Пирей","Ханья","Родос","Измир","Санторини","Миконос","Кавала","Салоники","Пирей"],
+ price:"£13 760",cabin:"остались только сьюты",note:"Обычные каюты распроданы",status:"few",
+ url:"https://www.celebritycruises.com/gb/en/itinerary/10-night-best-of-greece-cruise-from-athens-piraeus-on-celebrity-IN10M393?sailDate=2026-10-23&packageCode=IN10M393"},
+
+{id:"pr-n637n",cat:"east",line:"Princess Cruises",name:"Enchanted Princess: Греция и Адриатика",n:10,nl:"10 ночей",d:"2026-10-31",from:"31 окт",to:"10 ноя",tags:[],
+ route:["Пирей","Санторини","Ханья","Катаколон","Корфу","Сплит","Дубровник","Котор","Неаполь","Чивитавеккья"],
+ price:"$32 194",cabin:"остался один сьют",note:"Все остальные каюты проданы. Возвращается 10 ноября",status:"few",
+ url:"https://www.princess.com/itinerary-details?voyageCode=N637N"},
+
 /* ===== другие рейсы, конец октября и ноябрь ===== */
 {id:"co-fs-1101",cat:"west",line:"Costa Cruises",name:"Costa Fascinosa: кольцевой из Савоны",n:4,nl:"4 ночи",d:"2026-11-01",from:"1 ноя",to:"5 ноя",tags:["Кольцевой"],
  route:["Савона","Барселона","Марсель","Савона"],
@@ -683,7 +832,7 @@ const CRUISES=[
  url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=MA20261130NAPGOA&noofAdults=2&noofMinors=0"}
 ];
 
-const PICKS=["co-sm-0911","msc-we-1112","co-sm-1113"];
+const PICKS=["cel-1109","co-sm-0911","msc-we-1112"];
 /* ---------- отрисовка схемы маршрута ---------- */
 const MW=320, MH=216, PADX=40, PADY=22;
 const mapCache={};
@@ -826,11 +975,11 @@ function renderIntro(){
   $("lede").textContent = plural(CRUISES.length,"рейс","рейса","рейсов")+
     " от "+lines+" круизных компаний, у каждого — схема маршрута. Цена везде за двоих в одной каюте, самой дешёвой из тех, что ещё продаются. Все данные и ссылки только с официальных сайтов компаний, по состоянию на 22 сентября 2026.";
   $("target-text").textContent =
-    "Ровно 11 ноября на 5 ночей не уходит ни один круиз. "+
+    "Ровно 11 ноября короткого круиза нет ни у одной компании: "+
     plural(exact.length,"рейс отправляется","рейса отправляются","рейсов отправляются")+
-    " именно 11 ноября, но другой длительности. Всего "+
+    " именно в этот день, но они длиннее. Ближе всего — Celestyal 9–13 ноября: ровно 5 дней, кольцевой из Афин, всё включено. Всего "+
     plural(m.length,"вариант подходит","варианта подходят","вариантов подходят")+
-    " под окно 9–13 ноября — они отмечены рамкой и меткой «Ваши даты».";
+    " под окно 9–13 ноября; они отмечены рамкой и меткой «Ваши даты».";
 }
 renderIntro(); renderPicks(); renderChips(); renderList();
 </script>
