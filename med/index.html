@@ -361,7 +361,10 @@ const G = {
 "Порт-Саид":[32.30,31.26],"Тунис":[10.30,36.82],"Ла-Гулет":[10.30,36.82],"Бизерта":[9.87,37.28],
 "Фуншал":[-16.91,32.65],"Лас-Пальмас":[-15.43,28.13],"Тенерифе":[-16.25,28.47],"Арресифе":[-13.55,28.96],
 "Пуэрто-дель-Росарио":[-13.86,28.50],"Санта-Крус-де-ла-Пальма":[-17.76,28.68],
-"Мотриль":[-3.52,36.72],"Портимау":[-8.53,37.13],"Кавала":[24.41,40.94],"Лаврион":[24.06,37.71]
+"Мотриль":[-3.52,36.72],"Портимау":[-8.53,37.13],"Кавала":[24.41,40.94],"Лаврион":[24.06,37.71],
+"Сет":[3.70,43.40],"Кротоне":[17.13,39.08],"Мелилья":[-2.94,35.29],"Аргостоли":[20.49,38.17],
+"Санари-сюр-Мер":[5.80,43.12],"Паламос":[3.13,41.85],"Гитио":[22.57,36.76],"Галлиполи":[17.98,40.06],
+"Альгеро":[8.32,40.56],"Маон":[4.27,39.89],"Сеута":[-5.31,35.89]
 };
 
 /* ---------- определение «это море?» ---------- */
@@ -491,10 +494,11 @@ function leg(a,b){
 }
 const CATS=[
  {id:"all",label:"Все"},
- {id:"match",label:"Близко к 11 ноября"},
+ {id:"match",label:"Близко к 11 ноября",flag:"match"},
  {id:"west",label:"Западное Средиземноморье"},
  {id:"east",label:"Греция, Турция, Адриатика"},
- {id:"atl",label:"С выходом в Атлантику"}
+ {id:"atl",label:"С выходом в Атлантику"},
+ {id:"lux",label:"Люкс",flag:"lux"}
 ];
 const MATCH="Ваши даты";
 const S="~день в море";
@@ -540,32 +544,6 @@ const CRUISES=[
  route:["Кушадасы",S,"Мессина","Неаполь","Чивитавеккья","Ницца","Таррагона"],
  price:"€1 858",cabin:"каюта с окном",note:"Внутренние каюты только в листе ожидания",status:"few",
  url:"https://booking.celestyal.com/touchb2c/?inJsonGet=%7B%22dateFrom%22%3A%222026-11-28%22%2C%22dateTo%22%3A%222026-11-28%22%2C%22destination%22%3A%227NMEDRIVA%22%2C%22locale%22%3A%22en%22%2C%22residency%22%3A%22GB%22%2C%22caller%22%3A%22RUN-SEARCH%22%7D"},
-
-/* ===== Mein Schiff: кольцевые из Пальмы ===== */
-{id:"ms4-1108",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: западное Средиземноморье",n:7,nl:"7 ночей",d:"2026-11-08",from:"8 ноя",to:"15 ноя",tags:["Кольцевой"],
- route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
- price:"€1 798",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом из Германии €2 688 на двоих. Чаевые включены. Сайт на немецком",status:"ok",
- url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSV2657SEE"},
-
-{id:"ms4-1122",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: западное Средиземноморье, 22 ноября",n:7,nl:"7 ночей",d:"2026-11-22",from:"22 ноя",to:"29 ноя",tags:["Кольцевой"],
- route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
- price:"€1 398",cabin:"внутренняя каюта",note:"Самый дешёвый рейс Mein Schiff. Без перелёта; с перелётом €2 238 на двоих",status:"ok",
- url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSV2659SEE"},
-
-{id:"ms4-1115",cat:"atl",line:"Mein Schiff",name:"Mein Schiff 4: юг Испании и Марокко",n:7,nl:"7 ночей",d:"2026-11-15",from:"15 ноя",to:"22 ноя",tags:["Кольцевой"],
- route:["Пальма-де-Майорка","Кадис","Танжер","Малага","Валенсия","Пальма-де-Майорка"],
- price:"€2 398",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом €3 238 на двоих",status:"ok",
- url:"https://www.meinschiff.com/de/trips/7-naechte-suedspanien-fuer-geniesser-abbis-palma-MSV2658SEE"},
-
-{id:"ms4-1101",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: Испания и Гибралтар",n:7,nl:"7 ночей",d:"2026-11-01",from:"1 ноя",to:"8 ноя",tags:["Кольцевой"],
- route:["Пальма-де-Майорка","Малага","Гибралтар","Кадис","Валенсия","Пальма-де-Майорка"],
- price:"€2 498",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом €3 438 на двоих",status:"ok",
- url:"https://www.meinschiff.com/de/trips/7-naechte-faszination-mittelmeer-abbis-palma-MSV2656SEE"},
-
-{id:"ms7-1022",cat:"west",line:"Mein Schiff",name:"Mein Schiff 7: западное Средиземноморье",n:7,nl:"7 ночей",d:"2026-10-22",from:"22 окт",to:"29 окт",tags:["Кольцевой"],
- route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
- price:"€2 058",cabin:"каюта с балконом",note:"Здесь балкон дешевле внутренней каюты. Без перелёта; с перелётом €3 018 на двоих",status:"ok",
- url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSI2639SEE"},
 
 /* ===== ближе всего к 11 ноября, 4–7 ночей ===== */
 {id:"co-sm-0911",cat:"west",match:1,line:"Costa Cruises",name:"Costa Smeralda: Испания, Италия, Франция",n:5,nl:"5 ночей",d:"2026-11-09",from:"9 ноя",to:"14 ноя",tags:[MATCH,"Кольцевой"],
@@ -687,6 +665,144 @@ const CRUISES=[
  route:["Чивитавеккья","Салерно","Санторини","Кушадасы","Катаколон","Чивитавеккья"],
  price:"—",cabin:"все каюты проданы",note:"Единственный подходящий рейс у крупных американских линий — и он распродан полностью",status:"sold",
  url:"https://www.princess.com/itinerary-details?voyageCode=N639"},
+
+/* ===== Viking: три рейса ровно 11 ноября ===== */
+{id:"vk-sky",cat:"west",match:1,lux:1,line:"Viking",name:"Viking Sky: Рим – Барселона",n:7,nl:"7 ночей",d:"2026-11-11",from:"11 ноя",to:"18 ноя",tags:[MATCH,"Ровно 11 ноября"],
+ route:["Чивитавеккья","Ливорно","Монако","Марсель","Сет","Барселона"],
+ price:"$6 998",cabin:"Penthouse Veranda, с балконом",note:"Скидка с $10 898 действует до 30 сентября. Портовые сборы включены, перелёт нет (около $1 299 с человека). Два дня в Ливорно и два в Барселоне",status:"few",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/western-mediterranean/iconic-western-mediterranean/pricing.html?voyageId=OSK261111"},
+
+{id:"vk-vesta",cat:"west",match:1,lux:1,line:"Viking",name:"Viking Vesta: Барселона – Рим",n:7,nl:"7 ночей",d:"2026-11-11",from:"11 ноя",to:"18 ноя",tags:[MATCH,"Ровно 11 ноября"],
+ route:["Барселона","Сет","Марсель","Монако","Ливорно","Чивитавеккья"],
+ price:"$7 598",cabin:"Penthouse Veranda, с балконом",note:"Тот же маршрут в обратную сторону. Осталась 1 каюта. Скидка до 30 сентября",status:"few",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/western-mediterranean/iconic-western-mediterranean/pricing.html?voyageId=OVS261111"},
+
+{id:"vk-mira",cat:"east",match:1,lux:1,line:"Viking",name:"Viking Mira: Венеция – Рим вокруг Италии",n:7,nl:"7 ночей",d:"2026-11-11",from:"11 ноя",to:"18 ноя",tags:[MATCH,"Ровно 11 ноября"],
+ route:["Венеция",S,"Бари","Кротоне","Мессина","Неаполь","Чивитавеккья"],
+ price:"$7 898",cabin:"Deluxe Veranda, с балконом",note:"Два дня в Венеции. Терминал указан то как Фузина, то как Кьоджа — уточните при бронировании",status:"few",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/western-mediterranean/italian-sojourn/pricing.html?voyageId=OMI261111"},
+
+{id:"vk-neptune",cat:"west",match:1,lux:1,line:"Viking",name:"Viking Neptune: Рим – Барселона",n:7,nl:"7 ночей",d:"2026-11-10",from:"10 ноя",to:"17 ноя",tags:[MATCH],
+ route:["Чивитавеккья","Ливорно","Монако","Марсель","Сет","Барселона"],
+ price:"$10 598",cabin:"Penthouse Junior Suite",note:"Осталось 3 каюты, более дешёвые категории проданы",status:"few",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/western-mediterranean/iconic-western-mediterranean/pricing.html?voyageId=ONE261110"},
+
+{id:"vk-saturn",cat:"east",lux:1,line:"Viking",name:"Viking Saturn: Рим – Афины через Крит",n:7,nl:"7 ночей",d:"2026-11-07",from:"7 ноя",to:"14 ноя",tags:[],
+ route:["Чивитавеккья","Неаполь","Мессина","Ханья","Кушадасы","Пирей"],
+ price:"$7 998",cabin:"Veranda, с балконом",note:"Лучшая доступность среди рейсов Viking — свободны все категории. Два дня в Афинах",status:"ok",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/western-mediterranean/journey-to-antiquities/pricing.html?voyageId=OSA261107"},
+
+{id:"vk-star",cat:"east",lux:1,line:"Viking",name:"Viking Star: Афины – Стамбул",n:7,nl:"7 ночей",d:"2026-11-07",from:"7 ноя",to:"14 ноя",tags:[],
+ route:["Пирей","Ираклион","Родос","Кушадасы","Чанаккале","Стамбул"],
+ price:"$8 298",cabin:"Deluxe Veranda",note:"Осталась 1 каюта. Два дня в Афинах и два в Стамбуле",status:"few",
+ url:"https://www.vikingcruises.com/oceans/cruise-destinations/western-mediterranean/ancient-mediterranean-treasures/pricing.html?voyageId=OST261107"},
+
+/* ===== другие люксовые линии ===== */
+{id:"po-boug",cat:"atl",match:1,lux:1,line:"Ponant",name:"Le Bougainville: Андалусия и Марокко",n:5,nl:"5 ночей",d:"2026-11-10",from:"10 ноя",to:"15 ноя",tags:[MATCH,"Кольцевой","Ровно 5 ночей"],
+ route:["Малага","Гибралтар","Кадис","Танжер","Мелилья","Малага"],
+ price:"$16 120",cabin:"Deluxe Suite — дешевле ничего не осталось",note:"Единственный рейс ровно на 5 ночей в окне ваших дат. Каюта за $8 820 распродана, как и 5 категорий из 7. Бронирование только по запросу. Входят ли налоги и перелёт, сайт не пишет",status:"few",
+ url:"https://us.ponant.com/the-mediterranean-andalusia-and-moroccan-shores-eg101126-12"},
+
+{id:"ex-1109",cat:"east",match:1,lux:1,line:"Explora Journeys",name:"EXPLORA II: Киклады и Апулия",n:6,nl:"6 ночей",d:"2026-11-09",from:"9 ноя",to:"15 ноя",tags:[MATCH],
+ route:["Пирей","Сирос","Парос","Аргостоли","Котор","Бари"],
+ price:"$7 120",cabin:"сьют начального уровня",note:"Только лист ожидания. Цена снижена с $9 500. Включены питание, напитки и чаевые, перелёт нет",status:"wait",
+ url:"https://explorajourneys.com/us/en/destinations-globe/med/journeys/pirbri-06-v1?id-journey=EP20261109PIRBRI"},
+
+{id:"rg-voy1110",cat:"east",match:1,lux:1,line:"Regent Seven Seas",name:"Seven Seas Voyager: Адриатика и Греция",n:7,nl:"7 ночей",d:"2026-11-10",from:"10 ноя",to:"17 ноя",tags:[MATCH],
+ route:["Триест","Сплит","Дубровник","Котор",S,"Катаколон","Миконос","Пирей"],
+ price:"€13 778",cabin:"Deluxe Veranda Suite",note:"Все 10 категорий кают в листе ожидания. Всё включено, кроме перелёта",status:"wait",
+ url:"https://www.rssc.com/cruises/VOY261110/summary"},
+
+{id:"rg-nav1111",cat:"atl",match:1,lux:1,line:"Regent Seven Seas",name:"Seven Seas Navigator: Испания, Марокко и Канары",n:12,nl:"12 ночей",d:"2026-11-11",from:"11 ноя",to:"23 ноя",tags:[MATCH,"Ровно 11 ноября"],
+ route:["Барселона","Аликанте","Малага","Гибралтар","Касабланка","Арресифе","Тенерифе","Фуншал","Лиссабон"],
+ price:"€14 998",cabin:"Deluxe Window Suite",note:"Все 11 категорий в листе ожидания",status:"wait",
+ url:"https://www.rssc.com/cruises/NAV261111/summary"},
+
+{id:"ss-nova1113",cat:"east",lux:1,line:"Silversea",name:"Silver Nova: Италия, Черногория и Мальта",n:10,nl:"10 ночей",d:"2026-11-13",from:"13 ноя",to:"23 ноя",tags:[],
+ route:["Венеция","Триест","Котор","Бари","Ла-Валлетта","Таормина","Палермо","Неаполь","Чивитавеккья"],
+ price:"$16 200",cabin:"Superior Veranda Suite",note:"Всё включено: сборы, налоги и чаевые. Перелёт нет",status:"ok",
+ url:"https://www.silversea.com/destinations/mediterranean-cruise/fusina-venice-to-civitavecchia-rome-sn261113010.html"},
+
+{id:"ss-dawn1101",cat:"west",lux:1,line:"Silversea",name:"Silver Dawn: Барселона – Рим",n:7,nl:"7 ночей",d:"2026-11-01",from:"1 ноя",to:"8 ноя",tags:[],
+ route:["Барселона","Пальма-де-Майорка","Тунис","Кальяри","Трапани","Неаполь","Чивитавеккья"],
+ price:"$9 800",cabin:"Vista Suite, с окном",note:"Всё включено. С балконом от $11 000",status:"ok",
+ url:"https://www.silversea.com/destinations/mediterranean-cruise/barcelona-to-civitavecchia-rome-da261101007.html"},
+
+{id:"ss-ray1108",cat:"west",lux:1,line:"Silversea",name:"Silver Ray: Испания, Мальорка и Валенсия",n:10,nl:"10 ночей",d:"2026-11-08",from:"8 ноя",to:"18 ноя",tags:["Кольцевой"],
+ route:["Барселона","Марсель","Пальма-де-Майорка","Гибралтар","Малага","Картахена","Валенсия","Барселона"],
+ price:"$12 800",cabin:"Superior Veranda Suite",note:"Всё включено. Ночёвка в Пальме",status:"ok",
+ url:"https://www.silversea.com/destinations/mediterranean-cruise/barcelona-to-barcelona-ra261108010.html"},
+
+{id:"ws-surf",cat:"west",lux:1,line:"Windstar",name:"Wind Surf: гавани Ривьеры под парусом",n:5,nl:"5 ночей",d:"2026-10-25",from:"25 окт",to:"30 окт",tags:["Ровно 5 ночей"],
+ route:["Чивитавеккья","Портофино","Монако","Санари-сюр-Мер","Паламос","Барселона"],
+ price:"$5 122",cabin:"каюта начальной категории",note:"Парусная яхта на 342 гостя. Самый дешёвый рейс ровно на 5 ночей. Налоги и сборы не включены, перелёт нет",status:"ok",
+ url:"https://www.windstarcruises.com/tour-details/CVVBCN5D/mediterranean/civitavecchia-to-barcelona/5-day-quick-getaways-yachtsman-s-harbors-of-the-rivieras/?pkgid=1005746"},
+
+{id:"az-on1128",cat:"west",lux:1,line:"Azamara",name:"Azamara Onward: Франция и Италия",n:7,nl:"7 ночей",d:"2026-11-28",from:"28 ноя",to:"5 дек",tags:["Лучшая цена в люксе"],
+ route:["Барселона","Марсель","Ницца","Ла-Специя","Ливорно","Чивитавеккья"],
+ price:"$2 618",cabin:"каюта начальной категории",note:"Самая низкая цена среди люксовых линий. Налоги и сборы включены, перелёт нет. Ночёвки в Ницце и Ливорно",status:"ok",
+ url:"https://www.azamara.com/cruises/on261128-007-france-italy-cruise-marseille-nice-florence"},
+
+{id:"az-qs1126",cat:"east",lux:1,line:"Azamara",name:"Azamara Quest: Греция, Италия и Испания",n:8,nl:"8 ночей",d:"2026-11-26",from:"26 ноя",to:"4 дек",tags:[],
+ route:["Пирей","Катаколон","Сиракуза","Ла-Валлетта","Трапани","Тунис",S,"Картахена","Малага"],
+ price:"$4 878",cabin:"каюта начальной категории",note:"Налоги и сборы включены",status:"ok",
+ url:"https://www.azamara.com/cruises/qs261126-008-greece-italy-spain-cruise-athens-siracusa-malaga"},
+
+{id:"az-on1031",cat:"west",lux:1,line:"Azamara",name:"Azamara Onward: Италия, Франция и Испания",n:7,nl:"7 ночей",d:"2026-10-31",from:"31 окт",to:"7 ноя",tags:[],
+ route:["Чивитавеккья","Ливорно","Монако","Ницца","Марсель","Паламос","Барселона"],
+ price:"$6 318",cabin:"каюта начальной категории",note:"Налоги и сборы включены",status:"ok",
+ url:"https://www.azamara.com/cruises/on261031-007-italy-france-spain-cruise-florence-nice-palamos"},
+
+{id:"ex-1119",cat:"east",lux:1,line:"Explora Journeys",name:"EXPLORA II: Эгейское море и Адриатика",n:5,nl:"5 ночей",d:"2026-11-19",from:"19 ноя",to:"24 ноя",tags:["Ровно 5 ночей"],
+ route:["Пирей","Миконос","Дубровник","Котор","Бриндизи"],
+ price:"$3 150",cabin:"сьют начального уровня",note:"Только лист ожидания. Цена снижена с $7 900",status:"wait",
+ url:"https://explorajourneys.com/us/en/destinations-globe/med/journeys/pirbds-05-v1?id-journey=EP20261119PIRBDS"},
+
+{id:"ex-1115",cat:"east",lux:1,line:"Explora Journeys",name:"EXPLORA II: Ионическое море и Санторини",n:4,nl:"4 ночи",d:"2026-11-15",from:"15 ноя",to:"19 ноя",tags:[],
+ route:["Бари","Саранда","Санторини","Пирей"],
+ price:"$4 720",cabin:"сьют начального уровня",note:"Только лист ожидания",status:"wait",
+ url:"https://explorajourneys.com/us/en/destinations-globe/med/journeys/bripir-04-v1?id-journey=EP20261115BRIPIR"},
+
+{id:"sb-quest1025",cat:"east",lux:1,line:"Seabourn",name:"Seabourn Quest: Греция и Рим",n:7,nl:"7 ночей",d:"2026-10-25",from:"25 окт",to:"1 ноя",tags:[],
+ route:["Пирей","Нафплион","Катаколон","Корфу","Саранда",S,"Неаполь","Чивитавеккья"],
+ price:"$11 196",cabin:"сьют с окном",note:"Налоги включены в тариф, перелёт нет. Не распродан",status:"ok",
+ url:"https://www.seabourn.com/en/us/find-a-cruise/e6m07u/6676"},
+
+{id:"po-champ1108",cat:"east",lux:1,line:"Ponant",name:"Le Champlain: древние города Средиземноморья",n:8,nl:"8 ночей",d:"2026-11-08",from:"8 ноя",to:"16 ноя",tags:[],
+ route:["Пирей","Нафплион","Монемвасия","Ираклион","Гитио","Корфу","Галлиполи","Сиракуза","Ла-Валлетта"],
+ price:"$27 300",cabin:"Deluxe Suite — дешевле ничего не осталось",note:"Каюта за $14 860 распродана",status:"few",
+ url:"https://us.ponant.com/the-mediterranean-ancient-cities-of-the-mediterranean-ec081126-12"},
+
+{id:"oc-ins1102",cat:"atl",lux:1,line:"Oceania Cruises",name:"Insignia: Барселона – Лиссабон",n:7,nl:"7 ночей",d:"2026-11-02",from:"2 ноя",to:"9 ноя",tags:[],
+ route:["Барселона","Пальма-де-Майорка","Аликанте","Картахена","Малага","Кадис","Портимау","Лиссабон"],
+ price:"$8 698",cabin:"Concierge Veranda",note:"14 категорий из 15 в листе ожидания. Перелёт от $1 080 с человека отдельно",status:"few",
+ url:"https://www.oceaniacruises.com/cruises/INS261102/"},
+
+/* ===== Mein Schiff: кольцевые из Пальмы ===== */
+{id:"ms4-1108",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: западное Средиземноморье",n:7,nl:"7 ночей",d:"2026-11-08",from:"8 ноя",to:"15 ноя",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
+ price:"€1 798",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом из Германии €2 688 на двоих. Чаевые включены. Сайт на немецком",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSV2657SEE"},
+
+{id:"ms4-1122",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: западное Средиземноморье, 22 ноября",n:7,nl:"7 ночей",d:"2026-11-22",from:"22 ноя",to:"29 ноя",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
+ price:"€1 398",cabin:"внутренняя каюта",note:"Самый дешёвый рейс Mein Schiff. Без перелёта; с перелётом €2 238 на двоих",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSV2659SEE"},
+
+{id:"ms4-1115",cat:"atl",line:"Mein Schiff",name:"Mein Schiff 4: юг Испании и Марокко",n:7,nl:"7 ночей",d:"2026-11-15",from:"15 ноя",to:"22 ноя",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Кадис","Танжер","Малага","Валенсия","Пальма-де-Майорка"],
+ price:"€2 398",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом €3 238 на двоих",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-suedspanien-fuer-geniesser-abbis-palma-MSV2658SEE"},
+
+{id:"ms4-1101",cat:"west",line:"Mein Schiff",name:"Mein Schiff 4: Испания и Гибралтар",n:7,nl:"7 ночей",d:"2026-11-01",from:"1 ноя",to:"8 ноя",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Малага","Гибралтар","Кадис","Валенсия","Пальма-де-Майорка"],
+ price:"€2 498",cabin:"внутренняя каюта",note:"Без перелёта; с перелётом €3 438 на двоих",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-faszination-mittelmeer-abbis-palma-MSV2656SEE"},
+
+{id:"ms7-1022",cat:"west",line:"Mein Schiff",name:"Mein Schiff 7: западное Средиземноморье",n:7,nl:"7 ночей",d:"2026-10-22",from:"22 окт",to:"29 окт",tags:["Кольцевой"],
+ route:["Пальма-де-Майорка","Чивитавеккья","Ла-Специя","Марсель","Барселона","Пальма-де-Майорка"],
+ price:"€2 058",cabin:"каюта с балконом",note:"Здесь балкон дешевле внутренней каюты. Без перелёта; с перелётом €3 018 на двоих",status:"ok",
+ url:"https://www.meinschiff.com/de/trips/7-naechte-hoehepunkte-des-westlichen-mittelmeers-abbis-palma-MSI2639SEE"},
 
 /* ===== ноябрь: выход к Канарам и Марокко ===== */
 {id:"ce-in648",cat:"atl",match:1,line:"Celebrity Cruises",name:"Celebrity Infinity: Мадейра, Канары и Марокко",n:12,nl:"12 ночей",d:"2026-11-14",from:"14 ноя",to:"26 ноя",tags:["Кольцевой"],
@@ -832,7 +948,8 @@ const CRUISES=[
  url:"https://www.msccruises.eu/easterneurope/search/itinerary?cruiseId=MA20261130NAPGOA&noofAdults=2&noofMinors=0"}
 ];
 
-const PICKS=["cel-1109","co-sm-0911","msc-we-1112"];
+const PICKS=["cel-1109","co-sm-0911","msc-we-1112"
+];
 /* ---------- отрисовка схемы маршрута ---------- */
 const MW=320, MH=216, PADX=40, PADY=22;
 const mapCache={};
@@ -925,14 +1042,15 @@ function renderPicks(){
 function renderChips(){
   $("chips").innerHTML = CATS.map(k=>{
     const n = k.id==="all" ? CRUISES.length
-            : k.id==="match" ? CRUISES.filter(c=>c.match).length
+            : k.flag ? CRUISES.filter(c=>c[k.flag]).length
             : CRUISES.filter(c=>c.cat===k.id).length;
     return `<button type="button" class="chip" data-cat="${k.id}" aria-pressed="${state.cat===k.id}">${k.label}<span class="n">${n}</span></button>`;
   }).join("");
 }
 function renderList(){
+  const active = CATS.find(k=>k.id===state.cat);
   let rows = CRUISES.filter(c =>
-    (state.cat==="all" || c.cat===state.cat || (state.cat==="match" && c.match)) &&
+    (state.cat==="all" || (active&&active.flag ? c[active.flag] : c.cat===state.cat)) &&
     (!state.free || c.status==="ok" || c.status==="few"));
   if(state.sort==="date") rows=[...rows].sort((a,b)=>a.d.localeCompare(b.d)||a.n-b.n);
   if(state.sort==="short") rows=[...rows].sort((a,b)=>a.n-b.n||a.d.localeCompare(b.d));
@@ -975,9 +1093,10 @@ function renderIntro(){
   $("lede").textContent = plural(CRUISES.length,"рейс","рейса","рейсов")+
     " от "+lines+" круизных компаний, у каждого — схема маршрута. Цена везде за двоих в одной каюте, самой дешёвой из тех, что ещё продаются. Все данные и ссылки только с официальных сайтов компаний, по состоянию на 22 сентября 2026.";
   $("target-text").textContent =
-    "Ровно 11 ноября короткого круиза нет ни у одной компании: "+
-    plural(exact.length,"рейс отправляется","рейса отправляются","рейсов отправляются")+
-    " именно в этот день, но они длиннее. Ближе всего — Celestyal 9–13 ноября: ровно 5 дней, кольцевой из Афин, всё включено. Всего "+
+    "Ровно 11 ноября отправляются "+plural(exact.length,"рейс","рейса","рейсов")+
+    ", но все они длиннее пяти дней: три семиночных у Viking и по одному у MSC, Costa и Regent. "+
+    "Ровно на 5 дней ближе всего Celestyal 9–13 ноября — кольцевой из Афин по греческим островам, всё включено. "+
+    "Ровно на 5 ночей в окне только Ponant 10–15 ноября, но там остались лишь дорогие сьюты. Всего "+
     plural(m.length,"вариант подходит","варианта подходят","вариантов подходят")+
     " под окно 9–13 ноября; они отмечены рамкой и меткой «Ваши даты».";
 }
